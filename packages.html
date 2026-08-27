@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iksafar Travel - All India Travel Packages</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Browse all India travel packages from Iksafar Travel. Find the best tours across Kashmir, Kerala, Rajasthan, Goa and more.">
+    <meta name="keywords" content="India travel packages, tour packages, holiday packages, Iksafar Travel">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Iksafar Travel - All India Travel Packages">
+    <meta property="og:description" content="Browse authentic travel packages across India. Find your perfect tour.">
+    <meta property="og:image" content="assets/images/logo/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/vendor/animate.min.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER - Same as index.html                  -->
+    <!-- ============================================ -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo/logo.png" alt="Iksafar Travel" class="logo-img">
+                        <span class="logo-text">Iksafar <span class="logo-sub">Travel</span></span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown active">
+                        <a href="packages.html">Packages <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="packages.html?region=north">North India</a></li>
+                            <li><a href="packages.html?region=south">South India</a></li>
+                            <li><a href="packages.html?region=east">East India</a></li>
+                            <li><a href="packages.html?region=west">West India</a></li>
+                            <li><a href="packages.html?region=northeast">North East</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <!-- Right Side Icons -->
+                <div class="nav-actions">
+                    <button class="search-toggle" id="search-toggle" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="booking.html" class="btn-book-now">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Search Bar -->
+            <div class="search-bar" id="search-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search destinations, packages, or regions...">
+                    <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- PAGE BANNER                                -->
+    <!-- ============================================ -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Explore All <span class="highlight">Packages</span></h1>
+                <p>Discover the best travel experiences across India. From Kashmir to Kanyakumari.</p>
+                <div class="banner-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span class="active">Packages</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PACKAGES SECTION - WITH FILTERS            -->
+    <!-- ============================================ -->
+    <section class="packages-page section-padding">
+        <div class="container">
+            <div class="packages-layout">
+                
+                <!-- Sidebar Filters -->
+                <aside class="packages-sidebar">
+                    <div class="filter-sidebar" id="package-filters">
+                        <h3><i class="fas fa-sliders-h"></i> Filters</h3>
+                        
+                        <!-- Clear Filters -->
+                        <button class="filter-reset" onclick="resetFilters()">
+                            <i class="fas fa-undo"></i> Reset All
+                        </button>
+                        
+                        <!-- Region Filter -->
+                        <div class="filter-group">
+                            <h4><i class="fas fa-map-marker-alt"></i> Region</h4>
+                            <label>
+                                <input type="checkbox" name="region" value="north"> North India
+                            </label>
+                            <label>
+                                <input type="checkbox" name="region" value="south"> South India
+                            </label>
+                            <label>
+                                <input type="checkbox" name="region" value="east"> East India
+                            </label>
+                            <label>
+                                <input type="checkbox" name="region" value="west"> West India
+                            </label>
+                            <label>
+                                <input type="checkbox" name="region" value="northeast"> North East
+                            </label>
+                        </div>
+                        
+                        <!-- Duration Filter -->
+                        <div class="filter-group">
+                            <h4><i class="fas fa-clock"></i> Duration</h4>
+                            <label>
+                                <input type="checkbox" name="duration" value="3 Days"> 3 Days
+                            </label>
+                            <label>
+                                <input type="checkbox" name="duration" value="4 Days"> 4 Days
+                            </label>
+                            <label>
+                                <input type="checkbox" name="duration" value="5 Days"> 5 Days
+                            </label>
+                            <label>
+                                <input type="checkbox" name="duration" value="6 Days"> 6 Days
+                            </label>
+                            <label>
+                                <input type="checkbox" name="duration" value="7 Days"> 7+ Days
+                            </label>
+                        </div>
+                        
+                        <!-- Price Range -->
+                        <div class="filter-group">
+                            <h4><i class="fas fa-rupee-sign"></i> Price Range</h4>
+                            <div class="price-range">
+                                <input type="range" id="price-min" min="0" max="30000" value="0" step="1000">
+                                <input type="range" id="price-max" min="0" max="30000" value="30000" step="1000">
+                                <div class="price-values">
+                                    <span>₹<span id="price-min-label">0</span></span>
+                                    <span>₹<span id="price-max-label">30,000</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Rating Filter -->
+                        <div class="filter-group">
+                            <h4><i class="fas fa-star"></i> Rating</h4>
+                            <label>
+                                <input type="radio" name="rating" value="0" checked> All Ratings
+                            </label>
+                            <label>
+                                <input type="radio" name="rating" value="4"> ★★★★ & Above
+                            </label>
+                            <label>
+                                <input type="radio" name="rating" value="4.5"> ★★★★☆ & Above
+                            </label>
+                            <label>
+                                <input type="radio" name="rating" value="4.8"> ★★★★★ & Above
+                            </label>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- Main Content -->
+                <main class="packages-main">
+                    <!-- Toolbar -->
+                    <div class="packages-toolbar">
+                        <div class="packages-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="package-search" placeholder="Search packages...">
+                        </div>
+                        <div class="packages-sort">
+                            <label>
+                                <i class="fas fa-sort"></i> Sort by:
+                                <select id="package-sort">
+                                    <option value="popular">Popular</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating">Highest Rated</option>
+                                    <option value="duration">Duration</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="packages-count" id="package-count">
+                            Loading...
+                        </div>
+                    </div>
+                    
+                    <!-- Package Grid -->
+                    <div class="package-grid" id="packages-grid">
+                        <!-- Packages loaded by JavaScript -->
+                    </div>
+                    
+                    <!-- Load More -->
+                    <div class="load-more-container">
+                        <button class="load-more-packages btn-outline">
+                            <i class="fas fa-plus-circle"></i> Load More Packages
+                        </button>
+                    </div>
+                </main>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA SECTION                                -->
+    <!-- ============================================ -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Can't Find Your <span class="highlight">Perfect Package?</span></h2>
+                    <p>Contact us and we'll create a custom itinerary just for you.</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-primary btn-large">
+                        <i class="fas fa-headset"></i> Contact Us
+                    </a>
+                    <a href="tel:+918882911056" class="btn-secondary btn-large">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                     -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo/logo-white.png" alt="Iksafar Travel">
+                        <h3>Iksafar <span>Travel</span></h3>
+                    </div>
+                    <p>Authentic travel experiences across India. We create memorable journeys with passion and expertise.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="packages.html">All Packages</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Travel Blog</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Popular Regions -->
+                <div class="footer-col">
+                    <h4>Popular Regions</h4>
+                    <ul>
+                        <li><a href="packages.html?region=north">North India</a></li>
+                        <li><a href="packages.html?region=south">South India</a></li>
+                        <li><a href="packages.html?region=east">East India</a></li>
+                        <li><a href="packages.html?region=west">West India</a></li>
+                        <li><a href="packages.html?region=northeast">North East</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+918882911056">8882911056</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@iksafar.travel">info@iksafar.travel</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>B 1/6, Ganesh Nagar, Delhi 110045</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Iksafar Travel</strong>. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- BACK TO TOP BUTTON                         -->
+    <!-- ============================================ -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT FILES                            -->
+    <!-- ============================================ -->
+    
+    <!-- Vendor JS -->
+    <script src="js/vendor/swiper-bundle.min.js"></script>
+    <script src="js/vendor/wow.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/data.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/dark-mode.js"></script>
+    
+    <!-- Page specific JS -->
+    <script src="js/packages.js"></script>
+    
+</body>
+</html>

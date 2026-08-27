@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iksafar Travel - Travel Blog | Stories & Guides</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Read travel stories, guides, and tips from Iksafar Travel. Explore India through our travel blog.">
+    <meta name="keywords" content="travel blog, India travel guide, travel stories, Iksafar Travel">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Iksafar Travel - Travel Blog">
+    <meta property="og:description" content="Read authentic travel stories and guides from across India.">
+    <meta property="og:image" content="assets/images/logo/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/vendor/animate.min.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER                                     -->
+    <!-- ============================================ -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo/logo.png" alt="Iksafar Travel" class="logo-img">
+                        <span class="logo-text">Iksafar <span class="logo-sub">Travel</span></span>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <ul class="nav-menu" id="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="search-toggle" id="search-toggle" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="booking.html" class="btn-book-now">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                </div>
+            </nav>
+
+            <div class="search-bar" id="search-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search destinations, packages, or regions...">
+                    <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- PAGE BANNER                                -->
+    <!-- ============================================ -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Travel <span class="highlight">Blog</span></h1>
+                <p>Stories, guides, and tips from our travels across India</p>
+                <div class="banner-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span class="active">Blog</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BLOG SECTION                               -->
+    <!-- ============================================ -->
+    <section class="blog-page section-padding">
+        <div class="container">
+            
+            <!-- Blog Toolbar -->
+            <div class="blog-toolbar">
+                <div class="blog-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="blog-search" placeholder="Search blog posts...">
+                </div>
+                <div class="blog-categories" id="blog-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="Destinations">Destinations</button>
+                    <button class="category-btn" data-category="Adventure">Adventure</button>
+                    <button class="category-btn" data-category="Beach">Beach</button>
+                    <button class="category-btn" data-category="Culture">Culture</button>
+                    <button class="category-btn" data-category="Food">Food</button>
+                </div>
+            </div>
+            
+            <!-- Blog Grid -->
+            <div class="blog-grid" id="blog-grid">
+                <!-- Blog posts loaded by JavaScript -->
+            </div>
+            
+            <!-- Load More -->
+            <div class="load-more-container" id="load-more-container">
+                <button class="load-more-blog btn-outline" id="load-more-blog">
+                    <i class="fas fa-plus-circle"></i> Load More Posts
+                </button>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- NEWSLETTER SECTION                         -->
+    <!-- ============================================ -->
+    <section class="newsletter-section section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-content">
+                    <h2>Subscribe to Our <span class="highlight">Newsletter</span></h2>
+                    <p>Get the latest travel stories, tips, and exclusive offers delivered to your inbox.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Subscribe
+                        </button>
+                    </form>
+                    <span class="newsletter-note">No spam. Unsubscribe anytime.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA SECTION                                -->
+    <!-- ============================================ -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to <span class="highlight">Explore</span> India?</h2>
+                    <p>Let us help you create your perfect journey</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="booking.html" class="btn-primary btn-large">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                    <a href="contact.html" class="btn-secondary btn-large">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                     -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo/logo-white.png" alt="Iksafar Travel">
+                        <h3>Iksafar <span>Travel</span></h3>
+                    </div>
+                    <p>Authentic travel experiences across India. We create memorable journeys with passion and expertise.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="packages.html">All Packages</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Travel Blog</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Popular Regions</h4>
+                    <ul>
+                        <li><a href="packages.html?region=north">North India</a></li>
+                        <li><a href="packages.html?region=south">South India</a></li>
+                        <li><a href="packages.html?region=east">East India</a></li>
+                        <li><a href="packages.html?region=west">West India</a></li>
+                        <li><a href="packages.html?region=northeast">North East</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+918882911056">8882911056</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@iksafar.travel">info@iksafar.travel</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>B 1/6, Ganesh Nagar, Delhi 110045</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Iksafar Travel</strong>. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- BACK TO TOP BUTTON                         -->
+    <!-- ============================================ -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT FILES                            -->
+    <!-- ============================================ -->
+    
+    <script src="js/vendor/swiper-bundle.min.js"></script>
+    <script src="js/vendor/wow.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/dark-mode.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBlogPosts();
+            initBlogFilters();
+            initBlogSearch();
+            initNewsletter();
+        });
+        
+        let allBlogPosts = [];
+        let currentPage = 1;
+        const postsPerPage = 6;
+        let filteredPosts = [];
+        
+        function loadBlogPosts() {
+            const container = document.getElementById('blog-grid');
+            if (!container) return;
+            
+            // Get blog data from IKSafarData
+            allBlogPosts = IKSafarData.blog || [];
+            filteredPosts = [...allBlogPosts];
+            
+            displayBlogPosts();
+        }
+        
+        function displayBlogPosts() {
+            const container = document.getElementById('blog-grid');
+            if (!container) return;
+            
+            const start = 0;
+            const end = currentPage * postsPerPage;
+            const postsToShow = filteredPosts.slice(start, end);
+            
+            if (postsToShow.length === 0 && currentPage === 1) {
+                container.innerHTML = `
+                    <div class="no-results" style="grid-column: 1 / -1;">
+                        <i class="fas fa-blog" style="font-size: 3rem; color: var(--text-muted);"></i>
+                        <h3>No blog posts found</h3>
+                        <p>Check back later for new travel stories</p>
+                    </div>
+                `;
+                document.getElementById('load-more-container').style.display = 'none';
+                return;
+            }
+            
+            let html = '';
+            postsToShow.forEach(post => {
+                const date = new Date(post.date);
+                const formattedDate = date.toLocaleDateString('en-IN', {
+                    day: 'numeric',
+                    month: 'short',
+                    year: 'numeric'
+                });
+                
+                html += `
+                    <div class="blog-card" data-category="${post.category}">
+                        <div class="blog-image">
+                            <img src="${post.image}" alt="${post.title}" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+                            <span class="blog-category">${post.category}</span>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="fas fa-calendar-alt"></i> ${formattedDate}</span>
+                                <span><i class="fas fa-user"></i> ${post.author || 'Admin'}</span>
+                            </div>
+                            <h3>${post.title}</h3>
+                            <p>${post.excerpt}</p>
+                            <div class="blog-footer">
+                                <a href="blog-detail.html?id=${post.id}" class="btn-read-more">
+                                    Read More <i class="fas fa-arrow-right"></i>
+                                </a>
+                                ${post.tags ? `
+                                    <div class="blog-tags">
+                                        ${post.tags.slice(0, 2).map(tag => `<span class="tag">${tag}</span>`).join('')}
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            // If this is first page, replace content, else append
+            if (currentPage === 1) {
+                container.innerHTML = html;
+            } else {
+                container.insertAdjacentHTML('beforeend', html);
+            }
+            
+            // Show/hide load more button
+            const loadMoreContainer = document.getElementById('load-more-container');
+            if (filteredPosts.length > currentPage * postsPerPage) {
+                loadMoreContainer.style.display = 'block';
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
+        }
+        
+        function initBlogFilters() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const category = this.dataset.category;
+                    currentPage = 1;
+                    
+                    if (category === 'all') {
+                        filteredPosts = [...allBlogPosts];
+                    } else {
+                        filteredPosts = allBlogPosts.filter(post => 
+                            post.category === category
+                        );
+                    }
+                    
+                    displayBlogPosts();
+                });
+            });
+        }
+        
+        function initBlogSearch() {
+            const searchInput = document.getElementById('blog-search');
+            if (!searchInput) return;
+            
+            searchInput.addEventListener('input', function() {
+                const query = this.value.trim().toLowerCase();
+                currentPage = 1;
+                
+                if (!query) {
+                    filteredPosts = [...allBlogPosts];
+                } else {
+                    filteredPosts = allBlogPosts.filter(post =>
+                        post.title.toLowerCase().includes(query) ||
+                        post.excerpt.toLowerCase().includes(query) ||
+                        post.category.toLowerCase().includes(query) ||
+                        (post.tags && post.tags.some(tag => tag.toLowerCase().includes(query)))
+                    );
+                }
+                
+                displayBlogPosts();
+            });
+        }
+        
+        function initNewsletter() {
+            const form = document.getElementById('newsletter-form');
+            if (!form) return;
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                
+                if (email) {
+                    showToast('🎉 Subscribed successfully!', 'success');
+                    this.reset();
+                }
+            });
+        }
+        
+        // Load More functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadMoreBtn = document.getElementById('load-more-blog');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    currentPage++;
+                    displayBlogPosts();
+                    
+                    // Smooth scroll to new posts
+                    const container = document.getElementById('blog-grid');
+                    const lastPost = container.lastElementChild;
+                    if (lastPost) {
+                        lastPost.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            }
+        });
+    </script>
+    
+</body>
+</html>

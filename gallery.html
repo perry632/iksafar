@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iksafar Travel - Photo Gallery | Travel Memories</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore our photo gallery featuring stunning travel moments from across India. See the beauty of India through our lens.">
+    <meta name="keywords" content="travel gallery, India photos, travel memories, Iksafar Travel">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Iksafar Travel - Photo Gallery">
+    <meta property="og:description" content="Beautiful travel photos from across India.">
+    <meta property="og:image" content="assets/images/logo/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/vendor/animate.min.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER                                     -->
+    <!-- ============================================ -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo/logo.png" alt="Iksafar Travel" class="logo-img">
+                        <span class="logo-text">Iksafar <span class="logo-sub">Travel</span></span>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <ul class="nav-menu" id="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="search-toggle" id="search-toggle" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="booking.html" class="btn-book-now">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                </div>
+            </nav>
+
+            <div class="search-bar" id="search-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search destinations, packages, or regions...">
+                    <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- PAGE BANNER                                -->
+    <!-- ============================================ -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Photo <span class="highlight">Gallery</span></h1>
+                <p>Capturing the beauty and diversity of India through our lens</p>
+                <div class="banner-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span class="active">Gallery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- GALLERY FILTERS                            -->
+    <!-- ============================================ -->
+    <section class="gallery-filters section-padding" style="padding: 40px 0;">
+        <div class="container">
+            <div class="filter-tabs" id="gallery-filters">
+                <button class="filter-tab active" data-category="all">All Photos</button>
+                <button class="filter-tab" data-category="Heritage">Heritage</button>
+                <button class="filter-tab" data-category="Nature">Nature</button>
+                <button class="filter-tab" data-category="Adventure">Adventure</button>
+                <button class="filter-tab" data-category="Beach">Beach</button>
+                <button class="filter-tab" data-category="Wildlife">Wildlife</button>
+                <button class="filter-tab" data-category="Culture">Culture</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- GALLERY GRID                               -->
+    <!-- ============================================ -->
+    <section class="gallery-grid-section section-padding" style="padding-top: 0;">
+        <div class="container">
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Gallery items loaded by JavaScript -->
+            </div>
+            
+            <div class="gallery-loading" id="gallery-loading" style="text-align: center; padding: 40px;">
+                <div class="spinner"></div>
+                <p style="margin-top: 16px; color: var(--text-muted);">Loading gallery...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- LIGHTBOX MODAL                             -->
+    <!-- ============================================ -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-prev" id="lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-next" id="lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <img class="lightbox-image" id="lightbox-image" src="" alt="Gallery Image">
+        <div class="lightbox-caption" id="lightbox-caption">
+            <span id="lightbox-title">Image Title</span>
+            <span id="lightbox-category">Category</span>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- STATS SECTION                              -->
+    <!-- ============================================ -->
+    <section class="gallery-stats section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number" id="total-photos">0</span>
+                    <span class="stat-label">Photos</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="total-destinations">0</span>
+                    <span class="stat-label">Destinations</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="total-categories">0</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Years of Memories</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA SECTION                                -->
+    <!-- ============================================ -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Want to Be Part of <span class="highlight">Our Journey?</span></h2>
+                    <p>Book a package and create your own travel memories</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="packages.html" class="btn-primary btn-large">
+                        <i class="fas fa-compass"></i> View Packages
+                    </a>
+                    <a href="contact.html" class="btn-secondary btn-large">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                     -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo/logo-white.png" alt="Iksafar Travel">
+                        <h3>Iksafar <span>Travel</span></h3>
+                    </div>
+                    <p>Authentic travel experiences across India. We create memorable journeys with passion and expertise.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="packages.html">All Packages</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Travel Blog</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Popular Regions</h4>
+                    <ul>
+                        <li><a href="packages.html?region=north">North India</a></li>
+                        <li><a href="packages.html?region=south">South India</a></li>
+                        <li><a href="packages.html?region=east">East India</a></li>
+                        <li><a href="packages.html?region=west">West India</a></li>
+                        <li><a href="packages.html?region=northeast">North East</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+918882911056">8882911056</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@iksafar.travel">info@iksafar.travel</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>B 1/6, Ganesh Nagar, Delhi 110045</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Iksafar Travel</strong>. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- BACK TO TOP BUTTON                         -->
+    <!-- ============================================ -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT FILES                            -->
+    <!-- ============================================ -->
+    
+    <script src="js/vendor/swiper-bundle.min.js"></script>
+    <script src="js/vendor/wow.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/dark-mode.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadGallery();
+            initGalleryFilters();
+            initLightbox();
+        });
+        
+        let allGalleryItems = [];
+        let currentFilter = 'all';
+        let currentImageIndex = 0;
+        
+        function loadGallery() {
+            const container = document.getElementById('gallery-grid');
+            const loading = document.getElementById('gallery-loading');
+            
+            if (!container) return;
+            
+            // Get gallery data
+            allGalleryItems = IKSafarData.gallery || [
+                { id: 1, title: "Taj Mahal", category: "Heritage", image: "assets/images/gallery/taj-mahal.jpg" },
+                { id: 2, title: "Kerala Backwaters", category: "Nature", image: "assets/images/gallery/houseboat.jpg" },
+                { id: 3, title: "Desert Safari", category: "Adventure", image: "assets/images/gallery/desert-safari.jpg" },
+                { id: 4, title: "Himalayan Trek", category: "Adventure", image: "assets/images/gallery/trekking.jpg" },
+                { id: 5, title: "Living Root Bridge", category: "Nature", image: "assets/images/gallery/root-bridge.jpg" },
+                { id: 6, title: "Goa Beach", category: "Beach", image: "assets/images/gallery/goa-beach.jpg" },
+                { id: 7, title: "Jaipur City Palace", category: "Heritage", image: "assets/images/gallery/jaipur.jpg" },
+                { id: 8, title: "Sundarbans Tiger", category: "Wildlife", image: "assets/images/gallery/tiger.jpg" },
+                { id: 9, title: "Munnar Tea Gardens", category: "Nature", image: "assets/images/gallery/munnar.jpg" },
+                { id: 10, title: "Varanasi Ganga Aarti", category: "Culture", image: "assets/images/gallery/varanasi.jpg" },
+                { id: 11, title: "Hampi Ruins", category: "Heritage", image: "assets/images/gallery/hampi.jpg" },
+                { id: 12, title: "Rajasthan Folk Dance", category: "Culture", image: "assets/images/gallery/folk-dance.jpg" }
+            ];
+            
+            // Update stats
+            updateStats();
+            
+            // Show loading
+            if (loading) loading.style.display = 'block';
+            
+            setTimeout(() => {
+                if (loading) loading.style.display = 'none';
+                displayGalleryItems(allGalleryItems);
+            }, 500);
+        }
+        
+        function displayGalleryItems(items) {
+            const container = document.getElementById('gallery-grid');
+            
+            if (items.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results" style="grid-column: 1 / -1;">
+                        <i class="fas fa-images" style="font-size: 3rem; color: var(--text-muted);"></i>
+                        <h3>No photos found</h3>
+                        <p>Try selecting a different category</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            items.forEach((item, index) => {
+                html += `
+                    <div class="gallery-item" data-category="${item.category}" data-index="${index}">
+                        <img src="${item.image}" alt="${item.title}" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h4>${item.title}</h4>
+                                <span class="gallery-category">${item.category}</span>
+                            </div>
+                            <button class="gallery-view-btn" data-index="${index}">
+                                <i class="fas fa-search-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            
+            // Add click events for lightbox
+            document.querySelectorAll('.gallery-view-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const index = parseInt(this.dataset.index);
+                    openLightbox(index);
+                });
+            });
+            
+            document.querySelectorAll('.gallery-item').forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    openLightbox(index);
+                });
+            });
+        }
+        
+        function initGalleryFilters() {
+            const filters = document.querySelectorAll('.filter-tab');
+            
+            filters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    filters.forEach(f => f.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const category = this.dataset.category;
+                    currentFilter = category;
+                    
+                    if (category === 'all') {
+                        displayGalleryItems(allGalleryItems);
+                    } else {
+                        const filtered = allGalleryItems.filter(item => 
+                            item.category === category
+                        );
+                        displayGalleryItems(filtered);
+                    }
+                });
+            });
+        }
+        
+        function initLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const closeBtn = document.getElementById('lightbox-close');
+            const prevBtn = document.getElementById('lightbox-prev');
+            const nextBtn = document.getElementById('lightbox-next');
+            
+            // Close lightbox
+            closeBtn.addEventListener('click', closeLightbox);
+            
+            // Close on outside click
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeLightbox();
+                }
+            });
+            
+            // Close with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                }
+                if (e.key === 'ArrowLeft') {
+                    navigateLightbox(-1);
+                }
+                if (e.key === 'ArrowRight') {
+                    navigateLightbox(1);
+                }
+            });
+            
+            // Previous/Next
+            prevBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navigateLightbox(-1);
+            });
+            
+            nextBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navigateLightbox(1);
+            });
+        }
+        
+        function openLightbox(index) {
+            const lightbox = document.getElementById('lightbox');
+            const image = document.getElementById('lightbox-image');
+            const title = document.getElementById('lightbox-title');
+            const category = document.getElementById('lightbox-category');
+            
+            currentImageIndex = index;
+            const items = getCurrentItems();
+            const item = items[index];
+            
+            if (item) {
+                image.src = item.image;
+                image.alt = item.title;
+                title.textContent = item.title;
+                category.textContent = item.category;
+                
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function navigateLightbox(direction) {
+            const items = getCurrentItems();
+            const newIndex = currentImageIndex + direction;
+            
+            if (newIndex >= 0 && newIndex < items.length) {
+                currentImageIndex = newIndex;
+                const item = items[newIndex];
+                
+                document.getElementById('lightbox-image').src = item.image;
+                document.getElementById('lightbox-image').alt = item.title;
+                document.getElementById('lightbox-title').textContent = item.title;
+                document.getElementById('lightbox-category').textContent = item.category;
+            }
+        }
+        
+        function getCurrentItems() {
+            const container = document.getElementById('gallery-grid');
+            const items = container.querySelectorAll('.gallery-item');
+            
+            if (currentFilter === 'all') {
+                return allGalleryItems;
+            } else {
+                return allGalleryItems.filter(item => item.category === currentFilter);
+            }
+        }
+        
+        function updateStats() {
+            const totalPhotos = document.getElementById('total-photos');
+            const totalDestinations = document.getElementById('total-destinations');
+            const totalCategories = document.getElementById('total-categories');
+            
+            if (totalPhotos) totalPhotos.textContent = allGalleryItems.length;
+            if (totalCategories) {
+                const categories = [...new Set(allGalleryItems.map(item => item.category))];
+                totalCategories.textContent = categories.length;
+            }
+            if (totalDestinations) {
+                const destinations = [...new Set(allGalleryItems.map(item => item.title.split(' ')[0]))];
+                totalDestinations.textContent = destinations.length || '10+';
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iksafar Travel - Destination Detail</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore detailed information about your favorite destination with Iksafar Travel.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Iksafar Travel - Destination Detail">
+    <meta property="og:description" content="Detailed information about your chosen destination.">
+    <meta property="og:image" content="assets/images/logo/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/vendor/animate.min.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER                                     -->
+    <!-- ============================================ -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo/logo.png" alt="Iksafar Travel" class="logo-img">
+                        <span class="logo-text">Iksafar <span class="logo-sub">Travel</span></span>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <ul class="nav-menu" id="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="destinations.html" class="active">Destinations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="search-toggle" id="search-toggle" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="booking.html" class="btn-book-now">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                </div>
+            </nav>
+
+            <div class="search-bar" id="search-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search destinations, packages, or regions...">
+                    <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- DESTINATION DETAIL SECTION                 -->
+    <!-- ============================================ -->
+    <section class="destination-detail section-padding" id="destination-detail">
+        <div class="container">
+            <div class="detail-layout">
+                
+                <!-- Main Content -->
+                <div class="detail-main">
+                    
+                    <!-- Breadcrumb -->
+                    <div class="detail-breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span>/</span>
+                        <a href="destinations.html">Destinations</a>
+                        <span>/</span>
+                        <span id="dest-name-loading">Loading...</span>
+                    </div>
+                    
+                    <!-- Destination Header -->
+                    <div class="detail-header" id="dest-header">
+                        <div class="detail-image">
+                            <img id="dest-image" src="" alt="Destination Image" loading="lazy">
+                            <span class="detail-region" id="dest-region-badge">Region</span>
+                        </div>
+                        
+                        <div class="detail-info">
+                            <h1 id="dest-title">Loading...</h1>
+                            <div class="detail-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Region: <strong id="dest-region">-</strong></span>
+                                <span><i class="fas fa-tag"></i> <span id="dest-package-count">0</span> packages available</span>
+                            </div>
+                            <p id="dest-description">Loading...</p>
+                            
+                            <div class="dest-attractions-detail" id="dest-attractions">
+                                <!-- Attractions loaded by JS -->
+                            </div>
+                            
+                            <div class="detail-actions">
+                                <a href="packages.html" class="btn-primary">
+                                    <i class="fas fa-compass"></i> View Packages
+                                </a>
+                                <a href="contact.html" class="btn-outline">
+                                    <i class="fas fa-question-circle"></i> Ask About This Destination
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- About Section -->
+                    <div class="dest-about">
+                        <h2>About <span class="highlight" id="dest-about-title">Loading...</span></h2>
+                        <div id="dest-long-description">
+                            <p>Loading detailed information...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Packages Available -->
+                    <div class="dest-packages-section">
+                        <h2>Available <span class="highlight">Packages</span></h2>
+                        <div class="package-grid" id="dest-packages-grid">
+                            <!-- Packages loaded by JS -->
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="detail-sidebar">
+                    
+                    <!-- Quick Info -->
+                    <div class="quick-info-card card">
+                        <h4><i class="fas fa-info-circle"></i> Quick Info</h4>
+                        <ul class="quick-info-list">
+                            <li>
+                                <span>Region</span>
+                                <strong id="sidebar-region">-</strong>
+                            </li>
+                            <li>
+                                <span>Packages</span>
+                                <strong id="sidebar-packages">0</strong>
+                            </li>
+                            <li>
+                                <span>Best Time to Visit</span>
+                                <strong id="sidebar-best-time">-</strong>
+                            </li>
+                            <li>
+                                <span>Language</span>
+                                <strong id="sidebar-language">-</strong>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Why Visit -->
+                    <div class="why-visit-card card">
+                        <h4><i class="fas fa-star"></i> Why Visit?</h4>
+                        <ul id="why-visit-list">
+                            <li><i class="fas fa-check-circle"></i> Authentic local experiences</li>
+                            <li><i class="fas fa-check-circle"></i> Expert guided tours</li>
+                            <li><i class="fas fa-check-circle"></i> Best price guarantee</li>
+                            <li><i class="fas fa-check-circle"></i> 24/7 customer support</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contact -->
+                    <div class="quick-contact card">
+                        <h4><i class="fas fa-headset"></i> Need Help?</h4>
+                        <p>Call us for instant assistance</p>
+                        <a href="tel:+918882911056" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 12px;">
+                            <i class="fas fa-phone"></i> 8882911056
+                        </a>
+                        <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-muted);">
+                            <i class="fas fa-clock"></i> Available 9:00 AM - 8:00 PM
+                        </p>
+                    </div>
+                    
+                </aside>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- RELATED DESTINATIONS                       -->
+    <!-- ============================================ -->
+    <section class="related-destinations section-padding" style="background: var(--bg-light); padding-top: 40px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Explore More</span>
+                <h2>Similar <span class="highlight">Destinations</span></h2>
+                <p>Discover more amazing places to visit</p>
+            </div>
+            
+            <div class="destinations-grid" id="related-destinations">
+                <!-- Related destinations loaded by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA SECTION                                -->
+    <!-- ============================================ -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to <span class="highlight">Explore</span> India?</h2>
+                    <p>Let us help you create your perfect journey</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="booking.html" class="btn-primary btn-large">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                    <a href="contact.html" class="btn-secondary btn-large">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                     -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo/logo-white.png" alt="Iksafar Travel">
+                        <h3>Iksafar <span>Travel</span></h3>
+                    </div>
+                    <p>Authentic travel experiences across India. We create memorable journeys with passion and expertise.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="packages.html">All Packages</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Travel Blog</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Popular Regions</h4>
+                    <ul>
+                        <li><a href="packages.html?region=north">North India</a></li>
+                        <li><a href="packages.html?region=south">South India</a></li>
+                        <li><a href="packages.html?region=east">East India</a></li>
+                        <li><a href="packages.html?region=west">West India</a></li>
+                        <li><a href="packages.html?region=northeast">North East</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+918882911056">8882911056</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@iksafar.travel">info@iksafar.travel</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>B 1/6, Ganesh Nagar, Delhi 110045</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Iksafar Travel</strong>. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- BACK TO TOP BUTTON                         -->
+    <!-- ============================================ -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT FILES                            -->
+    <!-- ============================================ -->
+    
+    <script src="js/vendor/swiper-bundle.min.js"></script>
+    <script src="js/vendor/wow.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/dark-mode.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDestinationDetail();
+        });
+        
+        function loadDestinationDetail() {
+            // Get destination ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const destId = parseInt(urlParams.get('id'));
+            
+            if (!destId) {
+                showError('Destination not found');
+                return;
+            }
+            
+            const dest = IKSafarData.destinations.find(d => d.id === destId);
+            if (!dest) {
+                showError('Destination not found');
+                return;
+            }
+            
+            // Get packages for this destination
+            const packages = IKSafarData.packages.filter(p => 
+                p.region.toLowerCase() === dest.region.toLowerCase()
+            );
+            
+            // Populate header
+            document.getElementById('dest-image').src = dest.image;
+            document.getElementById('dest-image').alt = dest.name;
+            document.getElementById('dest-region-badge').textContent = dest.region;
+            document.getElementById('dest-title').textContent = dest.name;
+            document.getElementById('dest-region').textContent = dest.region;
+            document.getElementById('dest-package-count').textContent = packages.length;
+            document.getElementById('dest-description').textContent = dest.description;
+            document.getElementById('dest-name-loading').textContent = dest.name;
+            document.getElementById('dest-about-title').textContent = dest.name;
+            
+            // Attractions
+            const attractionsContainer = document.getElementById('dest-attractions');
+            if (dest.attractions && dest.attractions.length) {
+                let html = '';
+                dest.attractions.forEach(attr => {
+                    html += `<span class="attraction-tag">${attr}</span>`;
+                });
+                attractionsContainer.innerHTML = html;
+            }
+            
+            // Long description
+            const longDescContainer = document.getElementById('dest-long-description');
+            if (dest.longDescription) {
+                longDescContainer.innerHTML = `<p>${dest.longDescription}</p>`;
+            } else {
+                longDescContainer.innerHTML = `
+                    <p>${dest.name} is a beautiful destination in ${dest.region} India. 
+                    Known for its rich culture, stunning landscapes, and warm hospitality, 
+                    it offers travelers an authentic Indian experience.</p>
+                    <p>Visit ${dest.name} to explore its unique attractions, 
+                    taste local cuisine, and create unforgettable memories.</p>
+                `;
+            }
+            
+            // Sidebar info
+            document.getElementById('sidebar-region').textContent = dest.region;
+            document.getElementById('sidebar-packages').textContent = packages.length;
+            document.getElementById('sidebar-best-time').textContent = getBestTime(dest.region);
+            document.getElementById('sidebar-language').textContent = getLanguage(dest.region);
+            
+            // Load packages
+            const packagesGrid = document.getElementById('dest-packages-grid');
+            if (packages.length > 0) {
+                let html = '';
+                packages.slice(0, 6).forEach(pkg => {
+                    const inWishlist = StorageManager.isInWishlist(pkg.id);
+                    html += `
+                        <div class="package-card" data-id="${pkg.id}">
+                            <div class="package-image">
+                                <img src="${pkg.image}" alt="${pkg.name}" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+                                <span class="package-region">${pkg.region}</span>
+                                <button class="wishlist-btn" data-id="${pkg.id}">
+                                    <i class="${inWishlist ? 'fas' : 'far'} fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="package-info">
+                                <h3>${pkg.name}</h3>
+                                <div class="package-meta">
+                                    <span><i class="fas fa-clock"></i> ${pkg.duration}</span>
+                                    <span class="rating"><i class="fas fa-star"></i> ${pkg.rating}</span>
+                                </div>
+                                <p>${pkg.description}</p>
+                                <div class="package-footer">
+                                    <span class="price">₹${pkg.price.toLocaleString()}</span>
+                                    <a href="package-detail.html?id=${pkg.id}" class="btn-view">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                packagesGrid.innerHTML = html;
+                attachWishlistEvents();
+            } else {
+                packagesGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px 20px;">
+                        <i class="fas fa-suitcase" style="font-size: 3rem; color: var(--text-muted);"></i>
+                        <h3 style="margin-top: 16px;">No packages available yet</h3>
+                        <p style="color: var(--text-muted);">Check back soon or contact us for custom packages</p>
+                        <a href="contact.html" class="btn-primary" style="margin-top: 16px;">Contact Us</a>
+                    </div>
+                `;
+            }
+            
+            // Load related destinations
+            loadRelatedDestinations(dest);
+        }
+        
+        function loadRelatedDestinations(currentDest) {
+            const container = document.getElementById('related-destinations');
+            
+            const related = IKSafarData.destinations
+                .filter(d => d.id !== currentDest.id && d.region === currentDest.region)
+                .slice(0, 4);
+            
+            if (related.length === 0) {
+                container.innerHTML = '<p style="text-align: center; grid-column: 1 / -1; color: var(--text-muted);">No related destinations found</p>';
+                return;
+            }
+            
+            let html = '';
+            related.forEach(dest => {
+                html += `
+                    <div class="destination-card">
+                        <img src="${dest.image}" alt="${dest.name}" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+                        <div class="destination-overlay">
+                            <span class="destination-region">${dest.region}</span>
+                            <h4>${dest.name}</h4>
+                            <p>${dest.description}</p>
+                            <a href="destination-detail.html?id=${dest.id}" class="btn-view-dest" style="margin-top: 8px;">Explore</a>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        function getBestTime(region) {
+            const times = {
+                'North': 'April - June, September - November',
+                'South': 'October - March',
+                'East': 'October - March',
+                'West': 'October - March',
+                'North East': 'October - May'
+            };
+            return times[region] || 'October - March';
+        }
+        
+        function getLanguage(region) {
+            const langs = {
+                'North': 'Hindi, English',
+                'South': 'Tamil, Telugu, English',
+                'East': 'Bengali, Hindi, English',
+                'West': 'Hindi, Gujarati, English',
+                'North East': 'Various tribal languages, English'
+            };
+            return langs[region] || 'Hindi, English';
+        }
+        
+        function showError(message) {
+            const container = document.getElementById('destination-detail');
+            container.innerHTML = `
+                <div class="container" style="text-align: center; padding: 80px 0;">
+                    <i class="fas fa-exclamation-circle" style="font-size: 4rem; color: #ef4444;"></i>
+                    <h2 style="margin-top: 20px;">${message}</h2>
+                    <p style="margin-top: 12px;">Please go back and try again.</p>
+                    <a href="destinations.html" class="btn-primary" style="margin-top: 24px;">Browse All Destinations</a>
+                </div>
+            `;
+        }
+        
+        // Attach wishlist events
+        function attachWishlistEvents() {
+            document.querySelectorAll('.wishlist-btn').forEach(btn => {
+                btn.removeEventListener('click', handleWishlistClick);
+                btn.addEventListener('click', handleWishlistClick);
+            });
+        }
+        
+        function handleWishlistClick(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const btn = this;
+            const packageId = parseInt(btn.dataset.id);
+            if (!packageId) return;
+            
+            const icon = btn.querySelector('i');
+            const isInWishlist = StorageManager.isInWishlist(packageId);
+            
+            if (isInWishlist) {
+                StorageManager.removeFromWishlist(packageId);
+                icon.className = 'far fa-heart';
+                showToast('Removed from wishlist', 'info');
+            } else {
+                StorageManager.addToWishlist(packageId);
+                icon.className = 'fas fa-heart';
+                showToast('Added to wishlist ❤️', 'success');
+            }
+        }
+    </script>
+    
+</body>
+</html>

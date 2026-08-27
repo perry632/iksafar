@@ -1,0 +1,224 @@
+/* ============================================
+   Iksafar Travel - Dark Mode
+   ============================================ */
+
+[data-theme="dark"] {
+    --primary: #0b2a2f;
+    --primary-light: #1a3d42;
+    --primary-dark: #06181a;
+    --secondary: #f3b83a;
+    --secondary-light: #f5c85a;
+    --secondary-dark: #d4a030;
+    
+    --text-dark: #e8e0d8;
+    --text-light: #f5eee6;
+    --text-muted: #9a8a7a;
+    
+    --bg-light: #1a1a1a;
+    --bg-white: #242424;
+    --bg-dark: #0b2a2f;
+    
+    --border-color: #3a3a3a;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode specific overrides */
+[data-theme="dark"] body {
+    background: #1a1a1a;
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .header {
+    background: #242424;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+[data-theme="dark"] .nav-menu > li > a {
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .nav-actions button {
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .mobile-menu-btn {
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .dropdown-menu {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .dropdown-menu li a {
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .dropdown-menu li a:hover {
+    background: #333;
+}
+
+[data-theme="dark"] .search-container {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .search-container input {
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .search-list li a {
+    background: #2a2a2a;
+}
+
+[data-theme="dark"] .search-list li a:hover {
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .quick-info {
+    background: #242424;
+}
+
+[data-theme="dark"] .info-item:hover {
+    background: #2a2a2a;
+}
+
+[data-theme="dark"] .package-card {
+    background: #242424;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .package-card:hover {
+    border-color: var(--secondary);
+}
+
+[data-theme="dark"] .package-info p {
+    color: #9a8a7a;
+}
+
+[data-theme="dark"] .feature-card {
+    background: #242424;
+}
+
+[data-theme="dark"] .feature-card p {
+    color: #9a8a7a;
+}
+
+[data-theme="dark"] .testimonial-card {
+    background: #242424;
+}
+
+[data-theme="dark"] .testimonial-card p {
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .card {
+    background: #242424;
+}
+
+[data-theme="dark"] .destinations-section {
+    background: #1a1a1a !important;
+}
+
+[data-theme="dark"] .testimonials-section {
+    background: #1a1a1a !important;
+}
+
+[data-theme="dark"] .form-control {
+    background: #2a2a2a;
+    color: #e8e0d8;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .form-control:focus {
+    border-color: var(--secondary);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: #6a6a6a;
+}
+
+[data-theme="dark"] .filter-sidebar {
+    background: #242424;
+}
+
+[data-theme="dark"] .accordion-item {
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .accordion-header {
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .accordion-header:hover {
+    background: #2a2a2a;
+}
+
+[data-theme="dark"] .accordion-body-inner {
+    color: #9a8a7a;
+}
+
+[data-theme="dark"] .tabs {
+    background: #2a2a2a;
+}
+
+[data-theme="dark"] .tab-btn {
+    color: #9a8a7a;
+}
+
+[data-theme="dark"] .tab-btn:hover {
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .tab-btn.active {
+    background: #3a3a3a;
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .pagination a,
+[data-theme="dark"] .pagination span {
+    border-color: #3a3a3a;
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .pagination a:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+[data-theme="dark"] .modal {
+    background: #242424;
+}
+
+[data-theme="dark"] .modal-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="dark"] .btn-outline {
+    color: #e8e0d8;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .btn-outline:hover {
+    background: var(--primary);
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .toast-notification {
+    background: #2a2a2a;
+    color: #e8e0d8;
+}
+
+[data-theme="dark"] .skeleton {
+    background: #2a2a2a;
+}
+
+[data-theme="dark"] .wishlist-btn {
+    background: #2a2a2a;
+}
+
+[data-theme="dark"] .wishlist-btn:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}

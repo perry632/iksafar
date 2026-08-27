@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iksafar Travel - Frequently Asked Questions</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Find answers to frequently asked questions about Iksafar Travel packages, booking, payments, and more.">
+    <meta name="keywords" content="FAQ, travel questions, booking help, Iksafar Travel">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Iksafar Travel - Frequently Asked Questions">
+    <meta property="og:description" content="Find answers to all your travel questions.">
+    <meta property="og:image" content="assets/images/logo/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/vendor/animate.min.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER                                     -->
+    <!-- ============================================ -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo/logo.png" alt="Iksafar Travel" class="logo-img">
+                        <span class="logo-text">Iksafar <span class="logo-sub">Travel</span></span>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <ul class="nav-menu" id="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                    <li><a href="faq.html" class="active">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="search-toggle" id="search-toggle" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="booking.html" class="btn-book-now">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                </div>
+            </nav>
+
+            <div class="search-bar" id="search-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search destinations, packages, or regions...">
+                    <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- PAGE BANNER                                -->
+    <!-- ============================================ -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="banner-content">
+                <h1>Frequently Asked <span class="highlight">Questions</span></h1>
+                <p>Find answers to the most common questions about our travel packages</p>
+                <div class="banner-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span class="active">FAQ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FAQ SEARCH                                 -->
+    <!-- ============================================ -->
+    <section class="faq-search-section section-padding" style="padding: 30px 0;">
+        <div class="container">
+            <div class="faq-search-wrapper">
+                <div class="faq-search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="faq-search" placeholder="Search for answers...">
+                    <button class="faq-search-clear" id="faq-search-clear"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FAQ CATEGORIES                             -->
+    <!-- ============================================ -->
+    <section class="faq-categories-section" style="padding: 0 0 30px 0;">
+        <div class="container">
+            <div class="faq-categories" id="faq-categories">
+                <button class="faq-category-btn active" data-category="all">All Questions</button>
+                <!-- Categories loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FAQ CONTENT                                -->
+    <!-- ============================================ -->
+    <section class="faq-content-section section-padding" style="padding-top: 0;">
+        <div class="container">
+            <div class="faq-grid">
+                <div class="faq-main">
+                    <div class="faq-accordion" id="faq-accordion">
+                        <!-- FAQ items loaded by JavaScript -->
+                    </div>
+                    
+                    <div class="faq-no-results" id="faq-no-results" style="display: none; text-align: center; padding: 40px 20px;">
+                        <i class="fas fa-search" style="font-size: 3rem; color: var(--text-muted);"></i>
+                        <h3 style="margin-top: 16px;">No questions found</h3>
+                        <p style="color: var(--text-muted);">Try searching with different keywords</p>
+                    </div>
+                </div>
+                
+                <aside class="faq-sidebar">
+                    <!-- Quick Help -->
+                    <div class="faq-help-card card">
+                        <h4><i class="fas fa-headset"></i> Still Have Questions?</h4>
+                        <p>Can't find what you're looking for? We're here to help.</p>
+                        <a href="contact.html" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 12px;">
+                            <i class="fas fa-envelope"></i> Contact Us
+                        </a>
+                        <a href="tel:+918882911056" class="btn-outline" style="width: 100%; justify-content: center; margin-top: 8px;">
+                            <i class="fas fa-phone"></i> Call 8882911056
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div class="faq-links-card card">
+                        <h4><i class="fas fa-link"></i> Quick Links</h4>
+                        <ul>
+                            <li><a href="packages.html"><i class="fas fa-suitcase"></i> View All Packages</a></li>
+                            <li><a href="booking.html"><i class="fas fa-calendar-check"></i> Book Now</a></li>
+                            <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                            <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA SECTION                                -->
+    <!-- ============================================ -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to <span class="highlight">Explore</span> India?</h2>
+                    <p>Let us help you create your perfect journey</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="booking.html" class="btn-primary btn-large">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                    <a href="contact.html" class="btn-secondary btn-large">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                     -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo/logo-white.png" alt="Iksafar Travel">
+                        <h3>Iksafar <span>Travel</span></h3>
+                    </div>
+                    <p>Authentic travel experiences across India. We create memorable journeys with passion and expertise.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="packages.html">All Packages</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Travel Blog</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Popular Regions</h4>
+                    <ul>
+                        <li><a href="packages.html?region=north">North India</a></li>
+                        <li><a href="packages.html?region=south">South India</a></li>
+                        <li><a href="packages.html?region=east">East India</a></li>
+                        <li><a href="packages.html?region=west">West India</a></li>
+                        <li><a href="packages.html?region=northeast">North East</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+918882911056">8882911056</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@iksafar.travel">info@iksafar.travel</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>B 1/6, Ganesh Nagar, Delhi 110045</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Iksafar Travel</strong>. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- BACK TO TOP BUTTON                         -->
+    <!-- ============================================ -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT FILES                            -->
+    <!-- ============================================ -->
+    
+    <script src="js/vendor/swiper-bundle.min.js"></script>
+    <script src="js/vendor/wow.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/faq.js"></script>
+    
+</body>
+</html>

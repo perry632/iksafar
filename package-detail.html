@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iksafar Travel - Package Detail</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Book your dream package with Iksafar Travel. Explore detailed itineraries and pricing.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Iksafar Travel - Package Detail">
+    <meta property="og:description" content="Detailed information about your chosen travel package.">
+    <meta property="og:image" content="assets/images/logo/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/vendor/animate.min.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER                                     -->
+    <!-- ============================================ -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo/logo.png" alt="Iksafar Travel" class="logo-img">
+                        <span class="logo-text">Iksafar <span class="logo-sub">Travel</span></span>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <ul class="nav-menu" id="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown active">
+                        <a href="packages.html">Packages <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="packages.html?region=north">North India</a></li>
+                            <li><a href="packages.html?region=south">South India</a></li>
+                            <li><a href="packages.html?region=east">East India</a></li>
+                            <li><a href="packages.html?region=west">West India</a></li>
+                            <li><a href="packages.html?region=northeast">North East</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="search-toggle" id="search-toggle" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="booking.html" class="btn-book-now">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                </div>
+            </nav>
+
+            <div class="search-bar" id="search-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search destinations, packages, or regions...">
+                    <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- PACKAGE DETAIL SECTION                     -->
+    <!-- ============================================ -->
+    <section class="package-detail section-padding" id="package-detail">
+        <div class="container">
+            <div class="detail-layout">
+                
+                <!-- Main Content -->
+                <div class="detail-main">
+                    
+                    <!-- Breadcrumb -->
+                    <div class="detail-breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span>/</span>
+                        <a href="packages.html">Packages</a>
+                        <span>/</span>
+                        <span id="package-region">Loading...</span>
+                        <span>/</span>
+                        <span id="package-name-loading">Loading...</span>
+                    </div>
+                    
+                    <!-- Package Header -->
+                    <div class="detail-header" id="detail-header">
+                        <div class="detail-image">
+                            <img id="detail-image" src="" alt="Package Image" loading="lazy">
+                            <span class="detail-region" id="detail-region-badge">Region</span>
+                            <button class="wishlist-btn" id="detail-wishlist-btn" data-id="">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="detail-info">
+                            <h1 id="detail-title">Loading...</h1>
+                            <div class="detail-meta">
+                                <span><i class="fas fa-clock"></i> Duration: <strong id="detail-duration">-</strong></span>
+                                <span class="rating"><i class="fas fa-star"></i> <span id="detail-rating">0</span> (<span id="detail-reviews">0</span> reviews)</span>
+                                <span><i class="fas fa-users"></i> Group: <span id="detail-group">-</span></span>
+                                <span><i class="fas fa-signal"></i> Difficulty: <span id="detail-difficulty">-</span></span>
+                            </div>
+                            <p id="detail-description">Loading...</p>
+                            <div class="detail-tags" id="detail-tags">
+                                <!-- Tags will be loaded -->
+                            </div>
+                            <div class="detail-price">
+                                <span class="price" id="detail-price">₹0</span>
+                                <span class="price-note">per person</span>
+                            </div>
+                            <div class="detail-actions">
+                                <a href="booking.html?package=" class="btn-primary btn-large" id="detail-book-btn">
+                                    <i class="fas fa-calendar-check"></i> Book Now
+                                </a>
+                                <button class="btn-outline" id="detail-share-btn">
+                                    <i class="fas fa-share-alt"></i> Share
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tabs -->
+                    <div class="detail-tabs">
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="itinerary">Itinerary</button>
+                            <button class="tab-btn" data-tab="inclusions">Inclusions</button>
+                            <button class="tab-btn" data-tab="exclusions">Exclusions</button>
+                            <button class="tab-btn" data-tab="dates">Available Dates</button>
+                        </div>
+                        
+                        <!-- Itinerary Tab -->
+                        <div class="tab-content active" id="tab-itinerary">
+                            <div class="itinerary-list" id="itinerary-list">
+                                <!-- Itinerary loaded by JS -->
+                            </div>
+                        </div>
+                        
+                        <!-- Inclusions Tab -->
+                        <div class="tab-content" id="tab-inclusions">
+                            <ul class="detail-list" id="inclusions-list">
+                                <!-- Inclusions loaded by JS -->
+                            </ul>
+                        </div>
+                        
+                        <!-- Exclusions Tab -->
+                        <div class="tab-content" id="tab-exclusions">
+                            <ul class="detail-list" id="exclusions-list">
+                                <!-- Exclusions loaded by JS -->
+                            </ul>
+                        </div>
+                        
+                        <!-- Available Dates Tab -->
+                        <div class="tab-content" id="tab-dates">
+                            <div class="dates-grid" id="dates-grid">
+                                <!-- Dates loaded by JS -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Related Packages -->
+                    <div class="related-packages">
+                        <h3>You Might Also Like</h3>
+                        <div class="package-grid" id="related-packages">
+                            <!-- Related packages loaded by JS -->
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="detail-sidebar">
+                    
+                    <!-- Quick Booking -->
+                    <div class="quick-booking card">
+                        <h4>Quick Booking</h4>
+                        <form id="quick-booking-form">
+                            <div class="form-group">
+                                <label>Select Date</label>
+                                <input type="date" class="form-control" id="quick-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Number of Guests</label>
+                                <select class="form-control" id="quick-guests">
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6+ Guests</option>
+                                </select>
+                            </div>
+                            <div class="quick-total">
+                                <span>Total Price:</span>
+                                <span class="price" id="quick-total-price">₹0</span>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="quick-contact card">
+                        <h4>Need Help?</h4>
+                        <p>Call us for instant assistance</p>
+                        <a href="tel:+918882911056" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 12px;">
+                            <i class="fas fa-phone"></i> 8882911056
+                        </a>
+                        <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-muted);">
+                            <i class="fas fa-clock"></i> Available 9:00 AM - 8:00 PM
+                        </p>
+                    </div>
+                    
+                    <!-- Share -->
+                    <div class="share-box card">
+                        <h4>Share This Package</h4>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="share-btn twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="share-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="share-btn linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                </aside>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                     -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo/logo-white.png" alt="Iksafar Travel">
+                        <h3>Iksafar <span>Travel</span></h3>
+                    </div>
+                    <p>Authentic travel experiences across India. We create memorable journeys with passion and expertise.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="packages.html">All Packages</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Travel Blog</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Popular Regions</h4>
+                    <ul>
+                        <li><a href="packages.html?region=north">North India</a></li>
+                        <li><a href="packages.html?region=south">South India</a></li>
+                        <li><a href="packages.html?region=east">East India</a></li>
+                        <li><a href="packages.html?region=west">West India</a></li>
+                        <li><a href="packages.html?region=northeast">North East</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+918882911056">8882911056</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@iksafar.travel">info@iksafar.travel</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>B 1/6, Ganesh Nagar, Delhi 110045</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Iksafar Travel</strong>. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- BACK TO TOP BUTTON                         -->
+    <!-- ============================================ -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT FILES                            -->
+    <!-- ============================================ -->
+    
+    <script src="js/vendor/swiper-bundle.min.js"></script>
+    <script src="js/vendor/wow.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/dark-mode.js"></script>
+    
+    <!-- Package Detail JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            initPackageDetail();
+        });
+        
+        function initPackageDetail() {
+            // Get package ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const packageId = parseInt(urlParams.get('id'));
+            
+            if (!packageId) {
+                showError('Package not found');
+                return;
+            }
+            
+            const pkg = IKSafarData.getPackageById(packageId);
+            if (!pkg) {
+                showError('Package not found');
+                return;
+            }
+            
+            // Populate all details
+            document.getElementById('detail-image').src = pkg.image;
+            document.getElementById('detail-image').alt = pkg.name;
+            document.getElementById('detail-region-badge').textContent = pkg.region;
+            document.getElementById('detail-title').textContent = pkg.name;
+            document.getElementById('detail-duration').textContent = pkg.duration;
+            document.getElementById('detail-rating').textContent = pkg.rating;
+            document.getElementById('detail-reviews').textContent = pkg.reviews;
+            document.getElementById('detail-group').textContent = pkg.groupSize || '2-12 people';
+            document.getElementById('detail-difficulty').textContent = pkg.difficulty || 'Moderate';
+            document.getElementById('detail-description').textContent = pkg.longDescription || pkg.description;
+            document.getElementById('detail-price').textContent = '₹' + pkg.price.toLocaleString();
+            document.getElementById('package-region').textContent = pkg.region;
+            document.getElementById('package-name-loading').textContent = pkg.name;
+            
+            // Wishlist button
+            const wishlistBtn = document.getElementById('detail-wishlist-btn');
+            wishlistBtn.dataset.id = pkg.id;
+            const icon = wishlistBtn.querySelector('i');
+            icon.className = StorageManager.isInWishlist(pkg.id) ? 'fas fa-heart' : 'far fa-heart';
+            
+            // Book button
+            document.getElementById('detail-book-btn').href = 'booking.html?package=' + pkg.id;
+            
+            // Tags
+            const tagsContainer = document.getElementById('detail-tags');
+            pkg.tags.forEach(tag => {
+                const span = document.createElement('span');
+                span.className = 'tag';
+                span.textContent = tag;
+                tagsContainer.appendChild(span);
+            });
+            
+            // Itinerary
+            const itineraryList = document.getElementById('itinerary-list');
+            if (pkg.itinerary && pkg.itinerary.length) {
+                let html = '';
+                pkg.itinerary.forEach(item => {
+                    html += `
+                        <div class="itinerary-item">
+                            <div class="itinerary-day">${item.day}</div>
+                            <div class="itinerary-content">
+                                <h4>${item.title}</h4>
+                                <p>${item.description}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                itineraryList.innerHTML = html;
+            } else {
+                itineraryList.innerHTML = '<p>No itinerary available</p>';
+            }
+            
+            // Inclusions
+            const inclusionsList = document.getElementById('inclusions-list');
+            if (pkg.inclusions && pkg.inclusions.length) {
+                let html = '';
+                pkg.inclusions.forEach(item => {
+                    html += `<li><i class="fas fa-check-circle"></i> ${item}</li>`;
+                });
+                inclusionsList.innerHTML = html;
+            } else {
+                inclusionsList.innerHTML = '<li>No inclusions listed</li>';
+            }
+            
+            // Exclusions
+            const exclusionsList = document.getElementById('exclusions-list');
+            if (pkg.exclusions && pkg.exclusions.length) {
+                let html = '';
+                pkg.exclusions.forEach(item => {
+                    html += `<li><i class="fas fa-times-circle"></i> ${item}</li>`;
+                });
+                exclusionsList.innerHTML = html;
+            } else {
+                exclusionsList.innerHTML = '<li>No exclusions listed</li>';
+            }
+            
+            // Available Dates
+            const datesGrid = document.getElementById('dates-grid');
+            if (pkg.availableDates && pkg.availableDates.length) {
+                let html = '';
+                pkg.availableDates.forEach(date => {
+                    const formatted = new Date(date).toLocaleDateString('en-IN', {
+                        weekday: 'short',
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric'
+                    });
+                    html += `<div class="date-badge"><i class="fas fa-calendar-day"></i> ${formatted}</div>`;
+                });
+                datesGrid.innerHTML = html;
+            } else {
+                datesGrid.innerHTML = '<p>Contact us for available dates</p>';
+            }
+            
+            // Quick booking
+            document.getElementById('quick-date').setAttribute('min', new Date().toISOString().split('T')[0]);
+            document.getElementById('quick-total-price').textContent = '₹' + pkg.price.toLocaleString();
+            
+            document.getElementById('quick-guests').addEventListener('change', function() {
+                const guests = parseInt(this.value);
+                const total = pkg.price * guests;
+                document.getElementById('quick-total-price').textContent = '₹' + total.toLocaleString();
+            });
+            
+            document.getElementById('quick-booking-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const date = document.getElementById('quick-date').value;
+                const guests = document.getElementById('quick-guests').value;
+                window.location.href = 'booking.html?package=' + pkg.id + '&date=' + date + '&guests=' + guests;
+            });
+            
+            // Share buttons
+            document.getElementById('detail-share-btn').addEventListener('click', function() {
+                if (navigator.share) {
+                    navigator.share({
+                        title: pkg.name,
+                        text: 'Check out this amazing package: ' + pkg.name,
+                        url: window.location.href
+                    });
+                } else {
+                    // Fallback - copy to clipboard
+                    navigator.clipboard.writeText(window.location.href);
+                    showToast('Link copied to clipboard!', 'success');
+                }
+            });
+            
+            // Load related packages
+            loadRelatedPackages(pkg);
+        }
+        
+        function loadRelatedPackages(currentPackage) {
+            const container = document.getElementById('related-packages');
+            const related = IKSafarData.packages
+                .filter(p => p.id !== currentPackage.id && p.region === currentPackage.region)
+                .slice(0, 3);
+            
+            if (related.length === 0) {
+                container.innerHTML = '<p style="grid-column: 1 / -1; text-align: center;">No related packages found</p>';
+                return;
+            }
+            
+            let html = '';
+            related.forEach(pkg => {
+                html += `
+                    <div class="package-card" data-id="${pkg.id}">
+                        <div class="package-image">
+                            <img src="${pkg.image}" alt="${pkg.name}" loading="lazy">
+                            <span class="package-region">${pkg.region}</span>
+                        </div>
+                        <div class="package-info">
+                            <h3>${pkg.name}</h3>
+                            <div class="package-meta">
+                                <span><i class="fas fa-clock"></i> ${pkg.duration}</span>
+                                <span class="rating"><i class="fas fa-star"></i> ${pkg.rating}</span>
+                            </div>
+                            <p>${pkg.description}</p>
+                            <div class="package-footer">
+                                <span class="price">₹${pkg.price.toLocaleString()}</span>
+                                <a href="package-detail.html?id=${pkg.id}" class="btn-view">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        function showError(message) {
+            const container = document.getElementById('package-detail');
+            container.innerHTML = `
+                <div class="container" style="text-align: center; padding: 80px 0;">
+                    <i class="fas fa-exclamation-circle" style="font-size: 4rem; color: #ef4444;"></i>
+                    <h2 style="margin-top: 20px;">${message}</h2>
+                    <p style="margin-top: 12px;">Please go back and try again.</p>
+                    <a href="packages.html" class="btn-primary" style="margin-top: 24px;">Browse All Packages</a>
+                </div>
+            `;
+        }
+    </script>
+    
+</body>
+</html>

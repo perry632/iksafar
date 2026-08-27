@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iksafar Travel - Special Offers & Deals</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore special offers and deals on travel packages across India. Book now and save big with Iksafar Travel.">
+    <meta name="keywords" content="travel deals, special offers, discount packages, Iksafar Travel">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Iksafar Travel - Special Offers & Deals">
+    <meta property="og:description" content="Grab our limited-time offers and save on your dream vacation.">
+    <meta property="og:image" content="assets/images/logo/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/vendor/animate.min.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- HEADER                                     -->
+    <!-- ============================================ -->
+    <header class="header" id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo/logo.png" alt="Iksafar Travel" class="logo-img">
+                        <span class="logo-text">Iksafar <span class="logo-sub">Travel</span></span>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <ul class="nav-menu" id="main-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="offers.html" class="active">Offers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="search-toggle" id="search-toggle" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="booking.html" class="btn-book-now">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                </div>
+            </nav>
+
+            <div class="search-bar" id="search-bar">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search destinations, packages, or regions...">
+                    <button class="search-close" id="search-close"><i class="fas fa-times"></i></button>
+                </div>
+                <div id="search-results" class="search-results"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- PAGE BANNER                                -->
+    <!-- ============================================ -->
+    <section class="page-banner offers-banner">
+        <div class="container">
+            <div class="banner-content">
+                <span class="banner-tag"><i class="fas fa-tag"></i> Limited Time</span>
+                <h1>Special <span class="highlight">Offers</span></h1>
+                <p>Grab the best deals on travel packages across India</p>
+                <div class="banner-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span class="active">Offers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- OFFER STATS                                -->
+    <!-- ============================================ -->
+    <section class="offer-stats section-padding" style="padding: 30px 0;">
+        <div class="container">
+            <div class="offer-stat-grid">
+                <div class="offer-stat-item">
+                    <span class="stat-icon"><i class="fas fa-percent"></i></span>
+                    <div>
+                        <span class="stat-number">40%</span>
+                        <span class="stat-label">Off on Select Packages</span>
+                    </div>
+                </div>
+                <div class="offer-stat-item">
+                    <span class="stat-icon"><i class="fas fa-clock"></i></span>
+                    <div>
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Days Left</span>
+                    </div>
+                </div>
+                <div class="offer-stat-item">
+                    <span class="stat-icon"><i class="fas fa-users"></i></span>
+                    <div>
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Booked This Month</span>
+                    </div>
+                </div>
+                <div class="offer-stat-item">
+                    <span class="stat-icon"><i class="fas fa-gift"></i></span>
+                    <div>
+                        <span class="stat-number">Free</span>
+                        <span class="stat-label">Upgrades Available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FEATURED OFFERS                            -->
+    <!-- ============================================ -->
+    <section class="featured-offers section-padding" style="padding-top: 20px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Hot Deals</span>
+                <h2>Featured <span class="highlight">Offers</span></h2>
+                <p>Limited-time deals you don't want to miss</p>
+            </div>
+            
+            <div class="offers-grid" id="featured-offers">
+                <!-- Offers loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- OFFER FILTERS                              -->
+    <!-- ============================================ -->
+    <section class="offer-filters-section" style="padding: 20px 0;">
+        <div class="container">
+            <div class="offer-filters">
+                <button class="offer-filter active" data-type="all">All Offers</button>
+                <button class="offer-filter" data-type="seasonal">Seasonal Deals</button>
+                <button class="offer-filter" data-type="festival">Festival Special</button>
+                <button class="offer-filter" data-type="early-bird">Early Bird</button>
+                <button class="offer-filter" data-type="group">Group Discounts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ALL OFFERS                                 -->
+    <!-- ============================================ -->
+    <section class="all-offers section-padding" style="padding-top: 0;">
+        <div class="container">
+            <div class="offers-grid-large" id="all-offers">
+                <!-- All offers loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- OFFER TERMS                                -->
+    <!-- ============================================ -->
+    <section class="offer-terms section-padding" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="terms-wrapper">
+                <h3><i class="fas fa-info-circle"></i> Offer Terms & Conditions</h3>
+                <ul>
+                    <li>Offers are valid for a limited period only.</li>
+                    <li>Minimum booking value applies for certain offers.</li>
+                    <li>Offers cannot be combined with other promotions.</li>
+                    <li>Additional terms may apply based on the package.</li>
+                    <li>Iksafar Travel reserves the right to modify or cancel offers.</li>
+                </ul>
+                <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-muted);">
+                    <i class="fas fa-phone"></i> For any queries, call us at <strong>8882911056</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- NEWSLETTER SECTION                         -->
+    <!-- ============================================ -->
+    <section class="newsletter-section section-padding" style="background: var(--primary); color: var(--text-light);">
+        <div class="container">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-content">
+                    <h2 style="color: var(--text-light);">Get <span class="highlight">Exclusive Offers</span></h2>
+                    <p style="color: rgba(255,255,255,0.8);">Subscribe to get the latest deals directly in your inbox</p>
+                    <form class="newsletter-form" id="offer-newsletter">
+                        <input type="email" placeholder="Enter your email address" required style="background: rgba(255,255,255,0.1); color: var(--text-light); border-color: rgba(255,255,255,0.2);">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Subscribe
+                        </button>
+                    </form>
+                    <span class="newsletter-note" style="color: rgba(255,255,255,0.6);">No spam. Unsubscribe anytime.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CTA SECTION                                -->
+    <!-- ============================================ -->
+    <section class="cta-section" style="margin-top: 0;">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to <span class="highlight">Book</span> Your Deal?</h2>
+                    <p>Don't miss out on these amazing offers</p>
+                </div>
+                <div class="cta-buttons">
+                    <a href="booking.html" class="btn-primary btn-large">
+                        <i class="fas fa-calendar-check"></i> Book Now
+                    </a>
+                    <a href="contact.html" class="btn-secondary btn-large">
+                        <i class="fas fa-phone"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                     -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo/logo-white.png" alt="Iksafar Travel">
+                        <h3>Iksafar <span>Travel</span></h3>
+                    </div>
+                    <p>Authentic travel experiences across India. We create memorable journeys with passion and expertise.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="packages.html">All Packages</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Travel Blog</a></li>
+                        <li><a href="offers.html">Special Offers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Popular Regions</h4>
+                    <ul>
+                        <li><a href="packages.html?region=north">North India</a></li>
+                        <li><a href="packages.html?region=south">South India</a></li>
+                        <li><a href="packages.html?region=east">East India</a></li>
+                        <li><a href="packages.html?region=west">West India</a></li>
+                        <li><a href="packages.html?region=northeast">North East</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+918882911056">8882911056</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@iksafar.travel">info@iksafar.travel</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>B 1/6, Ganesh Nagar, Delhi 110045</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Sat: 9:00 AM - 8:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Iksafar Travel</strong>. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="faq.html">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- BACK TO TOP BUTTON                         -->
+    <!-- ============================================ -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================ -->
+    <!-- JAVASCRIPT FILES                            -->
+    <!-- ============================================ -->
+    
+    <script src="js/vendor/swiper-bundle.min.js"></script>
+    <script src="js/vendor/wow.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/localStorage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/dark-mode.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOffers();
+            initOfferFilters();
+            initNewsletter();
+        });
+        
+        let allOffers = [];
+        let currentFilter = 'all';
+        
+        function loadOffers() {
+            const featuredContainer = document.getElementById('featured-offers');
+            const allContainer = document.getElementById('all-offers');
+            
+            // Generate offer data
+            allOffers = [
+                {
+                    id: 1,
+                    title: "Kashmir Summer Special",
+                    region: "North",
+                    discount: "30% OFF",
+                    originalPrice: 24999,
+                    discountedPrice: 17499,
+                    description: "Explore the paradise on earth with this exclusive summer deal.",
+                    type: "seasonal",
+                    validUntil: "2026-08-31",
+                    image: "assets/images/packages/north/kashmir.jpg",
+                    tag: "Popular",
+                    color: "#e85d3a"
+                },
+                {
+                    id: 2,
+                    title: "Golden Triangle Festival Deal",
+                    region: "North",
+                    discount: "25% OFF",
+                    originalPrice: 18500,
+                    discountedPrice: 13875,
+                    description: "Experience the heritage of India with this festival special.",
+                    type: "festival",
+                    validUntil: "2026-07-15",
+                    image: "assets/images/packages/north/golden-triangle.jpg",
+                    tag: "Festival Special",
+                    color: "#f3b83a"
+                },
+                {
+                    id: 3,
+                    title: "Kerala Monsoon Magic",
+                    region: "South",
+                    discount: "35% OFF",
+                    originalPrice: 22500,
+                    discountedPrice: 14625,
+                    description: "Experience the beauty of Kerala during the monsoon season.",
+                    type: "seasonal",
+                    validUntil: "2026-09-30",
+                    image: "assets/images/packages/south/kerala.jpg",
+                    tag: "Best Deal",
+                    color: "#2e7d32"
+                },
+                {
+                    id: 4,
+                    title: "Rajasthan Group Offer",
+                    region: "West",
+                    discount: "20% OFF",
+                    originalPrice: 19900,
+                    discountedPrice: 15920,
+                    description: "Book for 4+ people and get this special group discount.",
+                    type: "group",
+                    validUntil: "2026-08-15",
+                    image: "assets/images/packages/west/rajasthan.jpg",
+                    tag: "Group Deal",
+                    color: "#bf8f00"
+                },
+                {
+                    id: 5,
+                    title: "Meghalaya Early Bird",
+                    region: "North East",
+                    discount: "15% OFF",
+                    originalPrice: 26700,
+                    discountedPrice: 22695,
+                    description: "Book 60 days in advance and save big on this unique journey.",
+                    type: "early-bird",
+                    validUntil: "2026-09-01",
+                    image: "assets/images/packages/northeast/meghalaya.jpg",
+                    tag: "Early Bird",
+                    color: "#1a5d5d"
+                },
+                {
+                    id: 6,
+                    title: "Goa Beach Party Deal",
+                    region: "West",
+                    discount: "20% OFF",
+                    originalPrice: 15900,
+                    discountedPrice: 12720,
+                    description: "Party in Goa with this amazing beach deal.",
+                    type: "seasonal",
+                    validUntil: "2026-08-10",
+                    image: "assets/images/packages/west/goa.jpg",
+                    tag: "Limited Time",
+                    color: "#e85d3a"
+                },
+                {
+                    id: 7,
+                    title: "Darjeeling Heritage Tour",
+                    region: "East",
+                    discount: "10% OFF",
+                    originalPrice: 18900,
+                    discountedPrice: 17010,
+                    description: "Experience the charm of Darjeeling with this heritage deal.",
+                    type: "early-bird",
+                    validUntil: "2026-07-31",
+                    image: "assets/images/packages/east/darjeeling.jpg",
+                    tag: "Save 10%",
+                    color: "#6d4c41"
+                },
+                {
+                    id: 8,
+                    title: "Sundarbans Wildlife Safari",
+                    region: "East",
+                    discount: "25% OFF",
+                    originalPrice: 21200,
+                    discountedPrice: 15900,
+                    description: "Explore the wild Sundarbans with this special offer.",
+                    type: "festival",
+                    validUntil: "2026-08-20",
+                    image: "assets/images/packages/east/sundarbans.jpg",
+                    tag: "Wildlife Special",
+                    color: "#1a5276"
+                },
+                {
+                    id: 9,
+                    title: "Tamil Nadu Temple Trail",
+                    region: "South",
+                    discount: "15% OFF",
+                    originalPrice: 17800,
+                    discountedPrice: 15130,
+                    description: "Visit ancient temples with this cultural heritage deal.",
+                    type: "group",
+                    validUntil: "2026-08-05",
+                    image: "assets/images/packages/south/tamilnadu.jpg",
+                    tag: "Group Offer",
+                    color: "#4a148c"
+                }
+            ];
+            
+            // Display featured offers (first 4)
+            const featured = allOffers.slice(0, 4);
+            featuredContainer.innerHTML = renderOfferCards(featured, true);
+            
+            // Display all offers
+            allContainer.innerHTML = renderOfferCards(allOffers, false);
+            
+            // Add count
+            document.querySelector('.offer-filters').insertAdjacentHTML('beforeend', `
+                <span class="offer-count">${allOffers.length} offers available</span>
+            `);
+        }
+        
+        function renderOfferCards(offers, isFeatured = false) {
+            if (offers.length === 0) {
+                return `
+                    <div class="no-results" style="grid-column: 1 / -1;">
+                        <i class="fas fa-tag" style="font-size: 3rem; color: var(--text-muted);"></i>
+                        <h3>No offers found</h3>
+                        <p>Check back later for new deals</p>
+                    </div>
+                `;
+            }
+            
+            let html = '';
+            offers.forEach(offer => {
+                const savings = offer.originalPrice - offer.discountedPrice;
+                const daysLeft = getDaysLeft(offer.validUntil);
+                
+                html += `
+                    <div class="offer-card ${isFeatured ? 'featured' : ''}" data-type="${offer.type}">
+                        ${isFeatured ? `<div class="offer-badge ${offer.type}">${offer.tag || 'Hot Deal'}</div>` : ''}
+                        <div class="offer-image">
+                            <img src="${offer.image}" alt="${offer.title}" loading="lazy" onerror="this.src='assets/images/placeholder.jpg'">
+                            <div class="offer-discount" style="background: ${offer.color}">
+                                <span>${offer.discount}</span>
+                            </div>
+                        </div>
+                        <div class="offer-content">
+                            <div class="offer-header">
+                                <span class="offer-region">${offer.region}</span>
+                                ${daysLeft !== null ? `<span class="offer-timer"><i class="fas fa-clock"></i> ${daysLeft} days left</span>` : ''}
+                            </div>
+                            <h3>${offer.title}</h3>
+                            <p>${offer.description}</p>
+                            <div class="offer-pricing">
+                                <span class="original-price">₹${offer.originalPrice.toLocaleString()}</span>
+                                <span class="offer-price">₹${offer.discountedPrice.toLocaleString()}</span>
+                            </div>
+                            <div class="offer-savings">
+                                <span>Save ₹${savings.toLocaleString()}</span>
+                            </div>
+                            <div class="offer-actions">
+                                <a href="booking.html?package=${offer.id}" class="btn-primary">
+                                    <i class="fas fa-calendar-check"></i> Book Now
+                                </a>
+                                <button class="btn-outline offer-share" data-title="${offer.title}" data-price="${offer.discountedPrice}">
+                                    <i class="fas fa-share-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            return html;
+        }
+        
+        function getDaysLeft(dateString) {
+            if (!dateString) return null;
+            const end = new Date(dateString);
+            const now = new Date();
+            const diff = end - now;
+            const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+            return days > 0 ? days : null;
+        }
+        
+        function initOfferFilters() {
+            const filters = document.querySelectorAll('.offer-filter');
+            
+            filters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    filters.forEach(f => f.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const type = this.dataset.type;
+                    currentFilter = type;
+                    
+                    const allContainer = document.getElementById('all-offers');
+                    
+                    if (type === 'all') {
+                        allContainer.innerHTML = renderOfferCards(allOffers, false);
+                    } else {
+                        const filtered = allOffers.filter(offer => offer.type === type);
+                        allContainer.innerHTML = renderOfferCards(filtered, false);
+                    }
+                });
+            });
+        }
+        
+        function initNewsletter() {
+            const form = document.getElementById('offer-newsletter');
+            if (!form) return;
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                
+                if (email) {
+                    showToast('🎉 Subscribed successfully! Get ready for exclusive offers!', 'success');
+                    this.reset();
+                }
+            });
+        }
+        
+        // Share functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.offer-share')) {
+                const btn = e.target.closest('.offer-share');
+                const title = btn.dataset.title;
+                const price = btn.dataset.price;
+                
+                if (navigator.share) {
+                    navigator.share({
+                        title: title,
+                        text: `Check out this amazing deal: ${title} at ₹${price.toLocaleString()}!`,
+                        url: window.location.href
+                    });
+                } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    showToast('Link copied to clipboard! Share it with friends!', 'success');
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>
