@@ -3,7 +3,6 @@
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
     initTheme();
     initMobileMenu();
     initSearch();
@@ -13,8 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initLoadMore();
     initDropdowns();
     initAccordion();
-    
-    // Load dynamic content
+
     loadFeaturedPackages();
     loadDestinations();
     loadTestimonials();
@@ -24,12 +22,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function initTheme() {
     const theme = StorageManager.getTheme();
     document.documentElement.setAttribute('data-theme', theme);
-    
+
     const toggleBtn = document.getElementById('theme-toggle');
     if (toggleBtn) {
         const icon = toggleBtn.querySelector('i');
         icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        
+
         toggleBtn.addEventListener('click', function() {
             const newTheme = StorageManager.toggleTheme();
             const icon = this.querySelector('i');
@@ -43,7 +41,7 @@ function initMobileMenu() {
     const menuBtn = document.getElementById('mobile-menu-btn');
     const navMenu = document.getElementById('main-nav');
     const body = document.body;
-    
+
     if (menuBtn && navMenu) {
         menuBtn.addEventListener('click', function() {
             navMenu.classList.toggle('active');
@@ -52,8 +50,7 @@ function initMobileMenu() {
             icon.classList.toggle('fa-times');
             body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         });
-        
-        // Close menu when clicking a link
+
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
@@ -62,8 +59,7 @@ function initMobileMenu() {
                 body.style.overflow = '';
             });
         });
-        
-        // Close menu on outside click
+
         document.addEventListener('click', function(e) {
             if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
                 navMenu.classList.remove('active');
@@ -82,7 +78,7 @@ function initSearch() {
     const searchBar = document.getElementById('search-bar');
     const searchInput = document.getElementById('search-input');
     const searchResults = document.getElementById('search-results');
-    
+
     if (searchToggle && searchBar) {
         searchToggle.addEventListener('click', function() {
             searchBar.classList.toggle('active');
@@ -91,7 +87,7 @@ function initSearch() {
             }
         });
     }
-    
+
     if (searchClose && searchBar) {
         searchClose.addEventListener('click', function() {
             searchBar.classList.remove('active');
@@ -99,24 +95,23 @@ function initSearch() {
             if (searchResults) searchResults.innerHTML = '';
         });
     }
-    
+
     if (searchInput && searchResults) {
         let timeoutId;
         searchInput.addEventListener('input', function() {
             clearTimeout(timeoutId);
             const query = this.value.trim();
-            
+
             if (query.length < 2) {
                 searchResults.innerHTML = '';
                 return;
             }
-            
+
             timeoutId = setTimeout(() => {
                 performSearch(query, searchResults);
             }, 300);
         });
-        
-        // Close search on Escape
+
         searchInput.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 searchBar.classList.remove('active');
@@ -129,7 +124,7 @@ function initSearch() {
 
 function performSearch(query, resultsContainer) {
     const results = IKSafarData.searchPackages(query);
-    
+
     if (results.length === 0) {
         resultsContainer.innerHTML = `
             <div class="search-empty">
@@ -139,7 +134,7 @@ function performSearch(query, resultsContainer) {
         `;
         return;
     }
-    
+
     let html = '<ul class="search-list">';
     results.slice(0, 10).forEach(pkg => {
         html += `
@@ -158,7 +153,7 @@ function performSearch(query, resultsContainer) {
         html += `<li><a href="packages.html?search=${encodeURIComponent(query)}" class="search-view-all">View all ${results.length} results</a></li>`;
     }
     html += '</ul>';
-    
+
     resultsContainer.innerHTML = html;
     StorageManager.addRecentSearch(query);
 }
@@ -167,7 +162,7 @@ function performSearch(query, resultsContainer) {
 function initBackToTop() {
     const backToTop = document.getElementById('back-to-top');
     if (!backToTop) return;
-    
+
     window.addEventListener('scroll', function() {
         if (window.scrollY > 400) {
             backToTop.classList.add('show');
@@ -175,7 +170,7 @@ function initBackToTop() {
             backToTop.classList.remove('show');
         }
     });
-    
+
     backToTop.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -196,14 +191,14 @@ function attachWishlistEvents() {
 function handleWishlistClick(e) {
     e.preventDefault();
     e.stopPropagation();
-    
+
     const btn = this;
     const packageId = parseInt(btn.dataset.id);
     if (!packageId) return;
-    
+
     const icon = btn.querySelector('i');
     const isInWishlist = StorageManager.isInWishlist(packageId);
-    
+
     if (isInWishlist) {
         StorageManager.removeFromWishlist(packageId);
         icon.className = 'far fa-heart';
@@ -219,7 +214,7 @@ function handleWishlistClick(e) {
 function initStatsCounter() {
     const counters = document.querySelectorAll('.stat-number');
     if (!counters.length) return;
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -232,7 +227,7 @@ function initStatsCounter() {
             }
         });
     }, { threshold: 0.5 });
-    
+
     counters.forEach(counter => observer.observe(counter));
 }
 
@@ -241,7 +236,7 @@ function animateCounter(el, target) {
     const start = 0;
     const step = target / (duration / 16);
     let current = start;
-    
+
     const timer = setInterval(() => {
         current += step;
         if (current >= target) {
@@ -257,7 +252,7 @@ function animateCounter(el, target) {
 function initLoadMore() {
     const loadMoreBtn = document.querySelector('.load-more-btn');
     if (!loadMoreBtn) return;
-    
+
     loadMoreBtn.addEventListener('click', function() {
         const hiddenItems = document.querySelectorAll('.package-card.hidden');
         if (hiddenItems.length) {
@@ -290,13 +285,12 @@ function initAccordion() {
         header.addEventListener('click', function() {
             const item = this.parentElement;
             const isActive = item.classList.contains('active');
-            
-            // Close all siblings
+
             const parent = item.parentElement;
             parent.querySelectorAll('.accordion-item').forEach(sibling => {
                 sibling.classList.remove('active');
             });
-            
+
             if (!isActive) {
                 item.classList.add('active');
             }
@@ -308,9 +302,9 @@ function initAccordion() {
 function loadFeaturedPackages() {
     const container = document.getElementById('featured-packages');
     if (!container) return;
-    
+
     const packages = IKSafarData.getFeaturedPackages(6);
-    
+
     let html = '';
     packages.forEach(pkg => {
         const inWishlist = StorageManager.isInWishlist(pkg.id);
@@ -338,7 +332,7 @@ function loadFeaturedPackages() {
             </div>
         `;
     });
-    
+
     container.innerHTML = html;
     attachWishlistEvents();
 }
@@ -347,9 +341,9 @@ function loadFeaturedPackages() {
 function loadDestinations() {
     const container = document.getElementById('destinations-grid');
     if (!container) return;
-    
+
     const destinations = IKSafarData.destinations.slice(0, 6);
-    
+
     let html = '';
     destinations.forEach(dest => {
         html += `
@@ -363,7 +357,7 @@ function loadDestinations() {
             </div>
         `;
     });
-    
+
     container.innerHTML = html;
 }
 
@@ -371,9 +365,9 @@ function loadDestinations() {
 function loadTestimonials() {
     const container = document.getElementById('testimonials');
     if (!container) return;
-    
+
     const testimonials = IKSafarData.testimonials;
-    
+
     let html = '';
     testimonials.forEach(testimonial => {
         const stars = '★'.repeat(testimonial.rating) + '☆'.repeat(5 - testimonial.rating);
@@ -394,10 +388,9 @@ function loadTestimonials() {
             </div>
         `;
     });
-    
+
     container.innerHTML = html;
-    
-    // Initialize Swiper if available
+
     if (typeof Swiper !== 'undefined') {
         new Swiper('#testimonials-slider', {
             slidesPerView: 1,
@@ -430,7 +423,7 @@ function showToast(message, type = 'success') {
     if (existingToast) {
         existingToast.remove();
     }
-    
+
     const toast = document.createElement('div');
     toast.className = 'toast-notification';
     const icon = type === 'success' ? 'fa-check-circle' : 'fa-info-circle';
@@ -439,12 +432,11 @@ function showToast(message, type = 'success') {
         <span>${message}</span>
     `;
     document.body.appendChild(toast);
-    
-    // Trigger animation
+
     requestAnimationFrame(() => {
         toast.classList.add('show');
     });
-    
+
     setTimeout(() => {
         toast.classList.remove('show');
         setTimeout(() => {
@@ -482,6 +474,9 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// ---------- Console Greeting ----------
 console.log('✈️ Iksafar Travel - Explore India with Authentic Journeys');
-console.log('📞 Contact us: 8882911056');
-console.log('📍 B 1/6, Ganesh Nagar, Delhi 110045');
+console.log('📞 Call us: 8882911056 | 7979092626');
+console.log('📍 Office: Plot 42, Sector 18, Gurugram');
+console.log('👤 Owner: Ankit Anand Singh');
+console.log('🔗 LinkedIn: https://in.linkedin.com/in/ankit-singh-914025211');

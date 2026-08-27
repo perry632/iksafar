@@ -7,6 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Read detailed travel stories, guides, and tips from Iksafar Travel.">
+    <meta name="author" content="Ankit Anand Singh">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Iksafar Travel - Blog Detail">
@@ -255,6 +256,7 @@
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://in.linkedin.com/in/ankit-singh-914025211" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
@@ -286,29 +288,54 @@
                         <li>
                             <i class="fas fa-phone"></i>
                             <a href="tel:+918882911056">8882911056</a>
+                            <span style="display: block; font-size: 0.85rem;">| <a href="tel:+917979092626">7979092626</a></span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@iksafar.travel">info@iksafar.travel</a>
+                            <a href="mailto:info@iksafar.com">info@iksafar.com</a>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>B 1/6, Ganesh Nagar, Delhi 110045</span>
+                            <span>Plot No 42, Sector 18,<br>Gurugram, Haryana - 122001</span>
+                            <span style="display: block; font-size: 0.8rem; color: rgba(255,255,255,0.4);">(Office Location)</span>
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
-                            <span>Mon-Sat: 9:00 AM - 8:00 PM</span>
+                            <span>24/7 - Always Open</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2026 <strong>Iksafar Travel</strong>. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="terms.html">Terms & Conditions</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="faq.html">FAQ</a>
+            <div class="business-footer">
+                <div class="business-info">
+                    <span>© 2026 Iksafar Travel</span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-user-tie"></i> Owner: Ankit Anand Singh</span>
+                    <span class="separator">|</span>
+                    <span><i class="fab fa-linkedin"></i> <a href="https://in.linkedin.com/in/ankit-singh-914025211" target="_blank" style="color: rgba(255,255,255,0.7);">LinkedIn</a></span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-map-pin"></i> Office: Plot 42, Sector 18, Gurugram</span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-certificate"></i> MSME Registered</span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-clock"></i> 24/7 Support</span>
+                    <span class="separator">|</span>
+                    <a href="assets/docs/msme-certificate.pdf" download>
+                        <i class="fas fa-file-pdf"></i> Download MSME Certificate
+                    </a>
+                </div>
+            </div>
+            
+            <div class="legal-footer">
+                <div class="legal-content">
+                    <span>Iksafar Travel - Your Trusted Travel Partner</span>
+                    <div class="legal-links">
+                        <a href="terms.html">Terms & Conditions</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -343,7 +370,6 @@
         });
         
         function loadBlogDetail() {
-            // Get blog ID from URL
             const urlParams = new URLSearchParams(window.location.search);
             const blogId = parseInt(urlParams.get('id'));
             
@@ -358,7 +384,6 @@
                 return;
             }
             
-            // Populate header
             document.getElementById('blog-title-loading').textContent = blog.title;
             document.getElementById('blog-category').textContent = blog.category;
             document.getElementById('blog-title').textContent = blog.title;
@@ -374,30 +399,22 @@
             document.getElementById('blog-image').src = blog.image;
             document.getElementById('blog-image').alt = blog.title;
             
-            // Blog content
             const contentContainer = document.getElementById('blog-content');
             if (blog.content) {
-                // If content is in the data
                 contentContainer.innerHTML = blog.content;
             } else {
-                // Generate sample content
                 contentContainer.innerHTML = `
-                    <p>${blog.excerpt}</p>
                     <p>${blog.excerpt}</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
                     <h3>Why Visit ${blog.category}?</h3>
-                    <p>Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                     <ul>
                         <li>Experience authentic local culture</li>
                         <li>Explore hidden gems off the beaten path</li>
                         <li>Connect with local communities</li>
                         <li>Create unforgettable memories</li>
                     </ul>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                    <blockquote>
-                        "Travel is the only thing you buy that makes you richer."
-                    </blockquote>
-                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                    <blockquote>"Travel is the only thing you buy that makes you richer."</blockquote>
                     <h3>Tips for Travelers</h3>
                     <ul>
                         <li>Plan ahead and book early</li>
@@ -408,7 +425,6 @@
                 `;
             }
             
-            // Tags
             const tagsContainer = document.getElementById('blog-tags');
             if (blog.tags && blog.tags.length) {
                 let html = '';
@@ -418,7 +434,6 @@
                 tagsContainer.innerHTML = html;
             }
             
-            // Author box
             const authorName = blog.author || 'Iksafar Team';
             const authorBio = blog.authorBio || 'Travel writer and explorer';
             document.getElementById('author-name').textContent = authorName;
@@ -430,13 +445,8 @@
             document.getElementById('author-avatar').src = authorImg;
             document.getElementById('sidebar-author-img').src = authorImg;
             
-            // Load recent posts
             loadRecentPosts(blog.id);
-            
-            // Load categories
             loadCategories();
-            
-            // Load related posts
             loadRelatedPosts(blog);
         }
         
@@ -471,7 +481,6 @@
         function loadCategories() {
             const container = document.getElementById('categories-list');
             
-            // Get unique categories
             const categories = [...new Set(IKSafarData.blog.map(b => b.category))];
             
             if (categories.length === 0) {
@@ -548,7 +557,6 @@
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                // Simple validation
                 const inputs = this.querySelectorAll('input, textarea');
                 let isValid = true;
                 

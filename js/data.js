@@ -1,15 +1,18 @@
 // ============================================
-// Iksafar Travel - Data File
-// All website data stored here
+// Iksafar Travel - Complete Data File
 // ============================================
 
 const IKSafarData = {
-    // Company Information
+    // ---------- Company Information ----------
     company: {
         name: "Iksafar Travel",
-        phone: "8882911056",
-        email: "info@iksafar.travel",
-        address: "B 1/6, Ganesh Nagar, Delhi 110045",
+        email: "info@iksafar.com",
+        phone: ["8882911056", "7979092626"],
+        workingHours: "24/7",
+        officeAddress: "Plot No 42, Sector 18, Gurugram, Haryana - 122001",
+        registeredAddress: "C-694, Kirari, North West Delhi, Delhi - 110086",
+        ownerName: "Ankit Anand Singh",
+        linkedin: "https://in.linkedin.com/in/ankit-singh-914025211",
         established: "2015",
         description: "Authentic travel experiences across India. We create memorable journeys with passion and expertise.",
         social: {
@@ -19,8 +22,8 @@ const IKSafarData = {
             twitter: "https://twitter.com/iksafar"
         }
     },
-    
-    // All Travel Packages
+
+    // ---------- Packages ----------
     packages: [
         {
             id: 1,
@@ -449,8 +452,8 @@ const IKSafarData = {
             groupSize: "2-12 people"
         }
     ],
-    
-    // All Destinations
+
+    // ---------- Destinations ----------
     destinations: [
         { id: 1, name: "Kashmir", region: "North", image: "assets/images/destinations/kashmir.jpg", description: "Paradise on Earth", attractions: ["Dal Lake", "Gulmarg", "Pahalgam"] },
         { id: 2, name: "Kerala", region: "South", image: "assets/images/destinations/kerala.jpg", description: "God's Own Country", attractions: ["Backwaters", "Munnar", "Kochi"] },
@@ -463,8 +466,8 @@ const IKSafarData = {
         { id: 9, name: "Uttarakhand", region: "North", image: "assets/images/destinations/uttarakhand.jpg", description: "Land of Char Dham", attractions: ["Rishikesh", "Haridwar", "Nainital"] },
         { id: 10, name: "Karnataka", region: "South", image: "assets/images/destinations/karnataka.jpg", description: "Heritage State", attractions: ["Bangalore", "Mysore", "Hampi"] }
     ],
-    
-    // Testimonials
+
+    // ---------- Testimonials ----------
     testimonials: [
         {
             id: 1,
@@ -512,8 +515,8 @@ const IKSafarData = {
             date: "August 2025"
         }
     ],
-    
-    // Blog Posts
+
+    // ---------- Blog ----------
     blog: [
         {
             id: 1,
@@ -576,8 +579,8 @@ const IKSafarData = {
             tags: ["Food", "Street Food", "Culture", "Travel"]
         }
     ],
-    
-    // FAQ
+
+    // ---------- FAQ ----------
     faq: [
         {
             id: 1,
@@ -626,10 +629,22 @@ const IKSafarData = {
             category: "Safety",
             question: "Is it safe to travel with Iksafar Travel?",
             answer: "Safety is our top priority. We work with verified partners, provide trained guides, and have 24/7 emergency support."
+        },
+        {
+            id: 9,
+            category: "Booking",
+            question: "How far in advance should I book?",
+            answer: "We recommend booking at least 30-45 days in advance for the best availability and prices, especially during peak season."
+        },
+        {
+            id: 10,
+            category: "Customization",
+            question: "Can I change my itinerary after booking?",
+            answer: "Yes, itinerary changes can be made subject to availability and additional charges. Please contact us at least 15 days before departure."
         }
     ],
-    
-    // Gallery Images
+
+    // ---------- Gallery ----------
     gallery: [
         { id: 1, title: "Taj Mahal at Sunset", category: "Heritage", image: "assets/images/gallery/taj-mahal.jpg" },
         { id: 2, title: "Kerala Houseboat", category: "Nature", image: "assets/images/gallery/houseboat.jpg" },
@@ -640,10 +655,12 @@ const IKSafarData = {
         { id: 7, title: "Jaipur City Palace", category: "Heritage", image: "assets/images/gallery/jaipur.jpg" },
         { id: 8, title: "Sundarbans Tiger", category: "Wildlife", image: "assets/images/gallery/tiger.jpg" },
         { id: 9, title: "Munnar Tea Gardens", category: "Nature", image: "assets/images/gallery/munnar.jpg" },
-        { id: 10, title: "Varanasi Ganga Aarti", category: "Culture", image: "assets/images/gallery/varanasi.jpg" }
+        { id: 10, title: "Varanasi Ganga Aarti", category: "Culture", image: "assets/images/gallery/varanasi.jpg" },
+        { id: 11, title: "Hampi Ruins", category: "Heritage", image: "assets/images/gallery/hampi.jpg" },
+        { id: 12, title: "Rajasthan Folk Dance", category: "Culture", image: "assets/images/gallery/folk-dance.jpg" }
     ],
-    
-    // Regions
+
+    // ---------- Regions ----------
     regions: [
         { id: "north", name: "North India", icon: "fa-mountain", count: 15, description: "Himalayan peaks, valleys & rich culture" },
         { id: "south", name: "South India", icon: "fa-palm-tree", count: 12, description: "Backwaters, beaches & temple architecture" },
@@ -651,37 +668,37 @@ const IKSafarData = {
         { id: "west", name: "West India", icon: "fa-camel", count: 10, description: "Deserts, beaches & royal heritage" },
         { id: "northeast", name: "North East", icon: "fa-cloud", count: 7, description: "Living root bridges, waterfalls & tribes" }
     ],
-    
-    // Helper Functions
+
+    // ---------- Helper Functions ----------
     getPackageById: function(id) {
         return this.packages.find(pkg => pkg.id === id);
     },
-    
+
     getPackageBySlug: function(slug) {
         return this.packages.find(pkg => pkg.slug === slug);
     },
-    
+
     getPackagesByRegion: function(region) {
         return this.packages.filter(pkg => pkg.region.toLowerCase() === region.toLowerCase());
     },
-    
+
     getFeaturedPackages: function(count = 6) {
         return this.packages.slice(0, count);
     },
-    
+
     getPopularPackages: function(count = 4) {
         return this.packages.sort((a, b) => b.rating - a.rating).slice(0, count);
     },
-    
+
     getCheapestPackages: function(count = 4) {
         return this.packages.sort((a, b) => a.price - b.price).slice(0, count);
     },
-    
+
     searchPackages: function(query) {
         const q = query.toLowerCase().trim();
         if (!q) return [];
-        
-        return this.packages.filter(pkg => 
+
+        return this.packages.filter(pkg =>
             pkg.name.toLowerCase().includes(q) ||
             pkg.description.toLowerCase().includes(q) ||
             pkg.region.toLowerCase().includes(q) ||
@@ -689,24 +706,23 @@ const IKSafarData = {
             pkg.duration.toLowerCase().includes(q)
         );
     },
-    
+
     getDestinationsByRegion: function(region) {
         return this.destinations.filter(dest => dest.region.toLowerCase() === region.toLowerCase());
     },
-    
+
     getBlogByCategory: function(category) {
         return this.blog.filter(post => post.category.toLowerCase() === category.toLowerCase());
     },
-    
+
     getFaqByCategory: function(category) {
         return this.faq.filter(item => item.category.toLowerCase() === category.toLowerCase());
     },
-    
+
     getGalleryByCategory: function(category) {
         return this.gallery.filter(item => item.category.toLowerCase() === category.toLowerCase());
     },
-    
-    // Get price range for filtering
+
     getPriceRange: function() {
         const prices = this.packages.map(pkg => pkg.price);
         return {
@@ -714,15 +730,14 @@ const IKSafarData = {
             max: Math.max(...prices)
         };
     },
-    
-    // Get unique tags
+
     getAllTags: function() {
         const allTags = this.packages.flatMap(pkg => pkg.tags);
         return [...new Set(allTags)];
     }
 };
 
-// Make data available globally
+// Make available globally
 window.IKSafarData = IKSafarData;
 
 // Export for Node.js (if needed)

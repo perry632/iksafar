@@ -8,6 +8,7 @@
     <!-- SEO Meta Tags -->
     <meta name="description" content="Explore special offers and deals on travel packages across India. Book now and save big with Iksafar Travel.">
     <meta name="keywords" content="travel deals, special offers, discount packages, Iksafar Travel">
+    <meta name="author" content="Ankit Anand Singh">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Iksafar Travel - Special Offers & Deals">
@@ -197,7 +198,7 @@
                     <li>Iksafar Travel reserves the right to modify or cancel offers.</li>
                 </ul>
                 <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-muted);">
-                    <i class="fas fa-phone"></i> For any queries, call us at <strong>8882911056</strong>
+                    <i class="fas fa-phone"></i> For any queries, call us at <strong>8882911056</strong> or <strong>7979092626</strong>
                 </p>
             </div>
         </div>
@@ -263,6 +264,7 @@
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://in.linkedin.com/in/ankit-singh-914025211" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
@@ -294,29 +296,54 @@
                         <li>
                             <i class="fas fa-phone"></i>
                             <a href="tel:+918882911056">8882911056</a>
+                            <span style="display: block; font-size: 0.85rem;">| <a href="tel:+917979092626">7979092626</a></span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@iksafar.travel">info@iksafar.travel</a>
+                            <a href="mailto:info@iksafar.com">info@iksafar.com</a>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>B 1/6, Ganesh Nagar, Delhi 110045</span>
+                            <span>Plot No 42, Sector 18,<br>Gurugram, Haryana - 122001</span>
+                            <span style="display: block; font-size: 0.8rem; color: rgba(255,255,255,0.4);">(Office Location)</span>
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
-                            <span>Mon-Sat: 9:00 AM - 8:00 PM</span>
+                            <span>24/7 - Always Open</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2026 <strong>Iksafar Travel</strong>. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="terms.html">Terms & Conditions</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="faq.html">FAQ</a>
+            <div class="business-footer">
+                <div class="business-info">
+                    <span>© 2026 Iksafar Travel</span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-user-tie"></i> Owner: Ankit Anand Singh</span>
+                    <span class="separator">|</span>
+                    <span><i class="fab fa-linkedin"></i> <a href="https://in.linkedin.com/in/ankit-singh-914025211" target="_blank" style="color: rgba(255,255,255,0.7);">LinkedIn</a></span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-map-pin"></i> Office: Plot 42, Sector 18, Gurugram</span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-certificate"></i> MSME Registered</span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-clock"></i> 24/7 Support</span>
+                    <span class="separator">|</span>
+                    <a href="assets/docs/msme-certificate.pdf" download>
+                        <i class="fas fa-file-pdf"></i> Download MSME Certificate
+                    </a>
+                </div>
+            </div>
+            
+            <div class="legal-footer">
+                <div class="legal-content">
+                    <span>Iksafar Travel - Your Trusted Travel Partner</span>
+                    <div class="legal-links">
+                        <a href="terms.html">Terms & Conditions</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -358,7 +385,6 @@
             const featuredContainer = document.getElementById('featured-offers');
             const allContainer = document.getElementById('all-offers');
             
-            // Generate offer data
             allOffers = [
                 {
                     id: 1,
@@ -471,34 +497,12 @@
                     image: "assets/images/packages/east/sundarbans.jpg",
                     tag: "Wildlife Special",
                     color: "#1a5276"
-                },
-                {
-                    id: 9,
-                    title: "Tamil Nadu Temple Trail",
-                    region: "South",
-                    discount: "15% OFF",
-                    originalPrice: 17800,
-                    discountedPrice: 15130,
-                    description: "Visit ancient temples with this cultural heritage deal.",
-                    type: "group",
-                    validUntil: "2026-08-05",
-                    image: "assets/images/packages/south/tamilnadu.jpg",
-                    tag: "Group Offer",
-                    color: "#4a148c"
                 }
             ];
             
-            // Display featured offers (first 4)
             const featured = allOffers.slice(0, 4);
             featuredContainer.innerHTML = renderOfferCards(featured, true);
-            
-            // Display all offers
             allContainer.innerHTML = renderOfferCards(allOffers, false);
-            
-            // Add count
-            document.querySelector('.offer-filters').insertAdjacentHTML('beforeend', `
-                <span class="offer-count">${allOffers.length} offers available</span>
-            `);
         }
         
         function renderOfferCards(offers, isFeatured = false) {
@@ -603,7 +607,6 @@
             });
         }
         
-        // Share functionality
         document.addEventListener('click', function(e) {
             if (e.target.closest('.offer-share')) {
                 const btn = e.target.closest('.offer-share');

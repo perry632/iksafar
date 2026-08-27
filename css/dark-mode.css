@@ -23,7 +23,6 @@
     --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
-/* Dark mode specific overrides */
 [data-theme="dark"] body {
     background: #1a1a1a;
     color: #e8e0d8;
@@ -219,6 +218,81 @@
 }
 
 [data-theme="dark"] .wishlist-btn:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+[data-theme="dark"] .verification-badge {
+    background: #242424;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .verification-section {
+    background: #1a1a1a;
+}
+
+[data-theme="dark"] .region-card {
+    background: #242424;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .region-card:hover {
+    border-color: var(--secondary);
+}
+
+[data-theme="dark"] .destination-card-large {
+    background: #242424;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .destination-card-large:hover {
+    border-color: var(--secondary);
+}
+
+[data-theme="dark"] .offer-card {
+    background: #242424;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .offer-card:hover {
+    border-color: var(--secondary);
+}
+
+[data-theme="dark"] .offer-filter {
+    color: #e8e0d8;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .offer-filter:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+[data-theme="dark"] .offer-filter.active {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+[data-theme="dark"] .blog-card {
+    background: #242424;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .blog-card:hover {
+    border-color: var(--secondary);
+}
+
+[data-theme="dark"] .category-btn {
+    color: #9a8a7a;
+    border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .category-btn:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+[data-theme="dark"] .category-btn.active {
     background: var(--secondary);
     color: var(--primary);
 }

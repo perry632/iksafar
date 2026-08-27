@@ -7,6 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Explore detailed information about your favorite destination with Iksafar Travel.">
+    <meta name="author" content="Ankit Anand Singh">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Iksafar Travel - Destination Detail">
@@ -192,7 +193,7 @@
                             <i class="fas fa-phone"></i> 8882911056
                         </a>
                         <p style="margin-top: 12px; font-size: 0.9rem; color: var(--text-muted);">
-                            <i class="fas fa-clock"></i> Available 9:00 AM - 8:00 PM
+                            <i class="fas fa-clock"></i> 24/7 Support
                         </p>
                     </div>
                     
@@ -258,6 +259,7 @@
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://in.linkedin.com/in/ankit-singh-914025211" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
@@ -289,29 +291,54 @@
                         <li>
                             <i class="fas fa-phone"></i>
                             <a href="tel:+918882911056">8882911056</a>
+                            <span style="display: block; font-size: 0.85rem;">| <a href="tel:+917979092626">7979092626</a></span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@iksafar.travel">info@iksafar.travel</a>
+                            <a href="mailto:info@iksafar.com">info@iksafar.com</a>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>B 1/6, Ganesh Nagar, Delhi 110045</span>
+                            <span>Plot No 42, Sector 18,<br>Gurugram, Haryana - 122001</span>
+                            <span style="display: block; font-size: 0.8rem; color: rgba(255,255,255,0.4);">(Office Location)</span>
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
-                            <span>Mon-Sat: 9:00 AM - 8:00 PM</span>
+                            <span>24/7 - Always Open</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2026 <strong>Iksafar Travel</strong>. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="terms.html">Terms & Conditions</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="faq.html">FAQ</a>
+            <div class="business-footer">
+                <div class="business-info">
+                    <span>© 2026 Iksafar Travel</span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-user-tie"></i> Owner: Ankit Anand Singh</span>
+                    <span class="separator">|</span>
+                    <span><i class="fab fa-linkedin"></i> <a href="https://in.linkedin.com/in/ankit-singh-914025211" target="_blank" style="color: rgba(255,255,255,0.7);">LinkedIn</a></span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-map-pin"></i> Office: Plot 42, Sector 18, Gurugram</span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-certificate"></i> MSME Registered</span>
+                    <span class="separator">|</span>
+                    <span><i class="fas fa-clock"></i> 24/7 Support</span>
+                    <span class="separator">|</span>
+                    <a href="assets/docs/msme-certificate.pdf" download>
+                        <i class="fas fa-file-pdf"></i> Download MSME Certificate
+                    </a>
+                </div>
+            </div>
+            
+            <div class="legal-footer">
+                <div class="legal-content">
+                    <span>Iksafar Travel - Your Trusted Travel Partner</span>
+                    <div class="legal-links">
+                        <a href="terms.html">Terms & Conditions</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -345,7 +372,6 @@
         });
         
         function loadDestinationDetail() {
-            // Get destination ID from URL
             const urlParams = new URLSearchParams(window.location.search);
             const destId = parseInt(urlParams.get('id'));
             
@@ -360,12 +386,10 @@
                 return;
             }
             
-            // Get packages for this destination
             const packages = IKSafarData.packages.filter(p => 
                 p.region.toLowerCase() === dest.region.toLowerCase()
             );
             
-            // Populate header
             document.getElementById('dest-image').src = dest.image;
             document.getElementById('dest-image').alt = dest.name;
             document.getElementById('dest-region-badge').textContent = dest.region;
@@ -376,7 +400,6 @@
             document.getElementById('dest-name-loading').textContent = dest.name;
             document.getElementById('dest-about-title').textContent = dest.name;
             
-            // Attractions
             const attractionsContainer = document.getElementById('dest-attractions');
             if (dest.attractions && dest.attractions.length) {
                 let html = '';
@@ -386,7 +409,6 @@
                 attractionsContainer.innerHTML = html;
             }
             
-            // Long description
             const longDescContainer = document.getElementById('dest-long-description');
             if (dest.longDescription) {
                 longDescContainer.innerHTML = `<p>${dest.longDescription}</p>`;
@@ -400,13 +422,11 @@
                 `;
             }
             
-            // Sidebar info
             document.getElementById('sidebar-region').textContent = dest.region;
             document.getElementById('sidebar-packages').textContent = packages.length;
             document.getElementById('sidebar-best-time').textContent = getBestTime(dest.region);
             document.getElementById('sidebar-language').textContent = getLanguage(dest.region);
             
-            // Load packages
             const packagesGrid = document.getElementById('dest-packages-grid');
             if (packages.length > 0) {
                 let html = '';
@@ -449,7 +469,6 @@
                 `;
             }
             
-            // Load related destinations
             loadRelatedDestinations(dest);
         }
         
@@ -517,7 +536,6 @@
             `;
         }
         
-        // Attach wishlist events
         function attachWishlistEvents() {
             document.querySelectorAll('.wishlist-btn').forEach(btn => {
                 btn.removeEventListener('click', handleWishlistClick);
